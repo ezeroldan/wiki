@@ -175,6 +175,7 @@ sudo update-alternatives --config gdm3.css
 ### .icons
 - [Marwaita Icons](https://www.gnome-look.org/p/1270110/)
 - [Flat Remix ICON theme](https://www.gnome-look.org/p/1012430)
+- [Newaita](https://www.gnome-look.org/p/1243493)
 
 ### .themes
 - [Adwaita-Color-Variants](https://www.gnome-look.org/p/1368915/)
