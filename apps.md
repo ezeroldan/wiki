@@ -1,7 +1,7 @@
 # Apps
 
 ```BASH
-sudo apt update -y && sudo apt-get upgrade -y
+sudo apt update -y && sudo apt upgrade -y
 ```
 
 ## Terminal Apps
@@ -9,15 +9,16 @@ sudo apt update -y && sudo apt-get upgrade -y
 
 ### Utiles
 ```BASH
-sudo apt-get install -y software-properties-common
-sudo apt-get install -y curl
-sudo apt-get install -y wget 
-sudo apt-get install -y htop
+sudo apt install -y software-properties-common
+sudo apt install -y curl
+sudo apt install -y wget
+sudo apt install -y htop
+sudo apt install -y git
 ```
 
 ### Otros
 ```BASH
-sudo apt-get install -y tree
+sudo apt install -y tree
 ```
 
 

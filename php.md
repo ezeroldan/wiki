@@ -1,15 +1,15 @@
 # PHP
 
 ```BASH
-sudo apt-get install -y git
+sudo apt install -y git
 ```
 
 ```BASH
-sudo apt-get update -y && sudo apt-get upgrade -y
+sudo apt update -y && sudo apt upgrade -y
 sudo add-apt-repository ppa:ondrej/php
-sudo apt-get update -y
-sudo apt-get install -y php7.4
-sudo apt-get install -y php-pear php7.4-curl php7.4-dev php7.4-gd php7.4-mbstring php7.4-zip php7.4-mysql php7.4-xml php7.4-mcrypt php7.4-sqlite3 php7.4-mysql php7.4-pgsql
+sudo apt update -y
+sudo apt install -y php7.4
+sudo apt install -y php-pear php7.4-curl php7.4-dev php7.4-gd php7.4-mbstring php7.4-zip php7.4-mysql php7.4-xml php7.4-mcrypt php7.4-sqlite3 php7.4-mysql php7.4-pgsql
 ```
 
 ## Composer
@@ -36,7 +36,7 @@ exit
 ## Valet
 
 ```BASH
-sudo apt-get install -y network-manager libnss3-tools jq xsel
+sudo apt install -y network-manager libnss3-tools jq xsel
 composer global require cpriego/valet-linux
 
 exit
@@ -54,7 +54,7 @@ sudo systemctl disable apache2
 ## Instalar MariaDB
 
 ```BASH
-sudo apt-get install -y mariadb-server
+sudo apt install -y mariadb-server
 sudo mysql_secure_installation
 ```
 
@@ -65,7 +65,7 @@ mysql -u root
 ```
 
 ```BASH
-sudo apt-get remove -y mariadb-server
+sudo apt remove -y mariadb-server
 ```
 
 ## Instalar phpMyAdmin

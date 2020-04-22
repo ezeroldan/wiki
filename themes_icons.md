@@ -1,7 +1,7 @@
 # Themes & Iconos
 
-```
-sudo apt-get update -y
+```BASH
+sudo apt update -y
 sudo apt install vanilla-gnome-desktop
 sudo update-alternatives --config gdm3.css
 ```

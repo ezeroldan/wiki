@@ -28,8 +28,6 @@
 `tail ...` Muestra las ultimas 10 lineas de un archivo  
 `tail -f ...` Muestra contenido a medida crece  
 
-
-
 `nano` Editor en consola  
 
 ### Permisos
@@ -111,9 +109,21 @@ Ejemplo:
 `blkid` Muestra info de los discos  
 
 ## Package Manager
-`sudo apt-get install ...` Instalar app  
-`sudo apt-get remove ...` Desisnstalar app  
-`sudo apt-get update` Actuliza Paquetes
+
+`sudo apt install` Instalar paquete  
+`sudo apt remove` Remover paquete  
+
+`sudo apt update` Refrescar index del repositorio  
+`sudo apt upgrade` Actualizar todos los paquetes actualizables  
+
+`sudo apt purge` Remover paquete con configuracion  
+`sudo apt autoremove` Remover paquetes innecesarios  
+`sudo apt search` Buscar un programa  
+`sudo apt show` Mostrar info de un paquete  
+`sudo apt list` Listar paquetes con criterio (installed, upgradable etc)  
+
+`sudo apt edit-sources` Editar sources list  
+`sudo apt full-upgrade` Upgrades packages with auto-handling of dependencies  
 
 ## Remove a PPA
 `sudo add-apt-repository --remove ppa:PPA_Name/ppa`
