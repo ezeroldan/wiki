@@ -1,22 +1,25 @@
 # Linux
 
+1. [Apps](./apps.md)
+2. [Zsh](./zsh.md)
+
 ## Development
-- [PHP](./php.md)
-- [NodeJs](./nodejs.md)
-- [Zsh](./zsh.md)
+1. [PHP](./git.md)
+1. [PHP](./php.md)
+2. [MySQL](./mysql.md)
+3. [NodeJs](./nodejs.md)
 
 ## Utiles
-- [Apps](./apps.md)
-- [Comandos](./comandos.md)
+[Comandos](./comandos.md)
 
 ## Otros
-- [exFat](./exfat.md)
-- [Elementary OS](./elementary_os.md)
-- [Virtual Box Guest](./virtual_box.md)
+[exFat](./exfat.md)  
+[Elementary OS](./elementary_os.md)  
+[Virtual Box Guest](./virtual_box.md)  
 
 ## Gnome
-- [Extensions](./gnome_extensions.md)
-- [Themes & Icons](./themes_icons.md)
+[Extensions](./gnome_extensions.md)  
+[Themes & Icons](./themes_icons.md)  
 
 
 # Directorios del root
