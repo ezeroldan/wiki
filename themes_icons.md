@@ -6,12 +6,18 @@ sudo apt install -y gnome-tweak-tool
 ```
 
 ## .icons
+```BASH
+mkdir .icons
+```
 [Marwaita Icons](https://www.gnome-look.org/p/1270110/)  
 [Flat Remix ICON theme](https://www.gnome-look.org/p/1012430)  
 [Newaita](https://www.gnome-look.org/p/1243493)  
 [Paper](https://www.gnome-look.org/p/1099618/)  
 
 ## .themes
+```BASH
+mkdir .themes
+```
 [Adwaita-Color-Variants](https://www.gnome-look.org/p/1368915/)  
 [Marwaita](https://www.gnome-look.org/p/1239855/)  
 [Yaru-Colors](https://www.gnome-look.org/p/1299514/)  
