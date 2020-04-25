@@ -2,7 +2,8 @@
 
 ## Gnome Extensions
 ```BASH
-sudo apt install -y gnome-shell-extensions
+sudo apt install -y gnome-tweak-tool
+
 ```
 
 ## Extensions
