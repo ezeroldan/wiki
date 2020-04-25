@@ -33,11 +33,27 @@
 ### Permisos
 `chmod ... ...` Cambiar permisos  
 
+Tipo de Archivo
+- Archivo Normal
+d Directorio
+l Enlace
+
+Permisos del Propietario
+Permisos del Grupo del Propietario
+Permisos del Resto de Usuarios del Sistema
+
+
 # | Name | -
 --|---------|--
 4 | Read    | r
 2 | Write   | w
 1 | Execute | x
+
+ | owner | group | world
+-|-------|-------|------
+
+
+
 
 owner-group-world  
 
