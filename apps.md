@@ -12,12 +12,13 @@ sudo apt install -y software-properties-common
 sudo apt install -y curl
 sudo apt install -y wget
 sudo apt install -y htop
-sudo apt install -y gnome-tweak-tool
+sudo apt install -y tree
 ```
 
-### Otros
+## Gnome Tool
 ```BASH
-sudo apt install -y tree
+sudo apt install -y gnome-tweak-tool
+sudo apt install -y chrome-gnome-shell
 ```
 ---
 
