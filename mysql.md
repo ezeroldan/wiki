@@ -33,6 +33,18 @@ sudo mysql -V
 sudo apt remove -y mariadb-server
 ```
 
+## Habilitar en boot
+```BASH
+sudo systemctl enable mariadb
+sudo systemctl enable mysql.service
+```
+
+## Deshabilitar en boot
+```BASH
+sudo systemctl disable mariadb
+sudo systemctl disable mysql.service
+```
+
 ---
 
 ## Instalar phpMyAdmin
@@ -40,6 +52,26 @@ sudo apt remove -y mariadb-server
 ```BASH
 cd ~/htdocs
 composer create-project phpmyadmin/phpmyadmin
+```
+
+```BASH
+ln -s /mnt/c/Users/Ezequiel/htdocs/phpmyadmin/phpmyadmin /mnt/c/Users/Ezequiel/htdocs/phpmyadmin/pma
+valet park
+valet secure pma
+valet secure phpmyadmin
+```
+
+```BASH
+cd ~/htdocs/phpmyadmin
+valet park
+valet secure pma
+valet secure phpmyadmin
+```
+
+```BASH
+cd ~/htdocs/phpmyadmin/phpmyadmin
+cp config.sample.inc.php config.inc.php
+sudo chmod 0755 config.inc.php
 ```
 
 [phpMyAdmin](http://phpmyadmin.test)

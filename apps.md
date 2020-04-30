@@ -13,12 +13,8 @@ sudo apt install -y curl
 sudo apt install -y wget
 sudo apt install -y htop
 sudo apt install -y tree
-```
-
-## Gnome Tool
-```BASH
-sudo apt install -y gnome-tweak-tool
-sudo apt install -y chrome-gnome-shell
+sudo apt install -y zip unzip
+sudo apt install -y mlocate
 ```
 ---
 
