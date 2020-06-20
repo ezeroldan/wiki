@@ -33,7 +33,8 @@ choco install microsoft-windows-terminal
             "fontFace": "DejaVu Sans Mono for Powerline",
             "fontSize": 10,
             "useAcrylic": false,
-            "acrylicOpacity": 0.8
+            "acrylicOpacity": 0.8,
+            "background": "#000"
         },
         "list": [
             {

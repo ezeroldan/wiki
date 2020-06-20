@@ -45,7 +45,7 @@ deployment:
 
 ## Comandos
 
-`git commit-m "[descriptive message]"`
+`git commit -m "[descriptive message]"`
 Records file snapshots permanently in version history  
 
 `git pull`
@@ -134,3 +134,6 @@ Downloads all history from the repository bookmark
 
 `git merge[bookmark]/[branch]`
 Combines bookmark’s branch into current local branch  
+
+`git remote -v`
+

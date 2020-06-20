@@ -75,6 +75,16 @@ sudo nano /etc/nginx/nginx.conf
 valet restart
 ```
 
+```
+client_header_timeout 3000;
+client_body_timeout 3000;
+client_max_body_size 100M;
+fastcgi_read_timeout 3000;
+fastcgi_buffers 8 512k;
+fastcgi_buffer_size 512k;
+```
+
+
 ## Configurar PHP
 ```BASH
 locate php.ini

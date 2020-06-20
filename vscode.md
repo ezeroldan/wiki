@@ -22,7 +22,11 @@
   "typescript.format.semicolons": "insert",
   "workbench.colorTheme": "Default Material Dark Theme",
   "editor.snippetSuggestions": "bottom",
-  "editor.suggest.insertMode": "replace"
+  "editor.suggest.insertMode": "replace",
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.tree.indent": 20,
+  "vetur.format.options.tabSize": 4
+	
 }
 ```
 
