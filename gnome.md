@@ -13,6 +13,13 @@ mkdir .icons
 [Flat Remix ICON theme](https://www.gnome-look.org/p/1012430)  
 [Newaita](https://www.gnome-look.org/p/1243493)  
 [Paper](https://www.gnome-look.org/p/1099618/)  
+[Boston](https://www.gnome-look.org/s/Gnome/p/1012402)
+[Qogir](https://www.gnome-look.org/s/Gnome/p/1296407)
+
+
+
+
+
 
 ## .themes
 ```BASH
