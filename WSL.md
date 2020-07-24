@@ -6,20 +6,7 @@
 - Virtual Machine Platform
 - Windows Subsystem for Linux
 
-## Fuentes
-[DejaVuSansMono](https://github.com/ryanoasis/nerd-fonts/releases/download/v1.2.0/DejaVuSansMono.zip)  
-`DejaVu Sans Mono for Powerline Nerd Font Complete Mono Windows Compatible.ttf`  
-
 ## Terminal
-
-### Chocolatey
-```BASH
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-```
-### Terminal
-```BASH
-choco install microsoft-windows-terminal
-```
 
 [settings.json](https://github.com/microsoft/terminal/blob/master/doc/cascadia/SettingsSchema.md)  
 
@@ -30,7 +17,7 @@ choco install microsoft-windows-terminal
     "launchMode": "maximized",
     "profiles": {
         "defaults": {
-            "fontFace": "DejaVu Sans Mono for Powerline",
+            "fontFace": "Fira Code",
             "fontSize": 10,
             "useAcrylic": false,
             "acrylicOpacity": 0.8,
@@ -55,6 +42,7 @@ choco install microsoft-windows-terminal
 
 ### Instalar
 [Acrylic DNS Proxy](http://mayakron.altervista.org/wikibase/show.php?id=AcrylicHome)
+
 [Windows 10 Configuration](https://mayakron.altervista.org/support/acrylic/Windows10Configuration.htm)
 
 ### Configurar
