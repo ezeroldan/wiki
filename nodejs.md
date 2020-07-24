@@ -3,7 +3,7 @@
 ## Instalar
 ```BASH
 sudo apt update -y && sudo apt upgrade -y
-curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt install -y nodejs
 sudo apt install -y npm
 ```
