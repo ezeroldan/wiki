@@ -25,7 +25,7 @@
         },
         "list": [
             {
-
+                "startingDirectory" : "//wsl$/Ubuntu-20.04/home/ezeroldan"
             }
         ]
     }
