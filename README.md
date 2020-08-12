@@ -4,7 +4,7 @@
 2. [Zsh](./zsh.md)
 
 ## Development
-1. [PHP](./git.md)
+1. [Git](./git.md)
 1. [PHP](./php.md)
 2. [MySQL](./mysql.md)
 3. [NodeJs](./nodejs.md)
@@ -16,11 +16,7 @@
 [exFat](./exfat.md)  
 [Elementary OS](./elementary_os.md)  
 [Virtual Box Guest](./virtual_box.md)  
-
-## Gnome
-[Extensions](./gnome_extensions.md)  
-[Themes & Icons](./themes_icons.md)  
-
+[Gnome](./gnome.md)  
 
 # Directorios del root
 `Home` ~ Donde esta cada usuario
