@@ -18,6 +18,16 @@ sudo apt install -y mlocate
 ```
 ---
 
+## Microsoft TrueType Fonts
+```BASH
+sudo add-apt-repository multiverse
+sudo apt update && sudo apt install ttf-mscorefonts-installer
+sudo fc-cache -f -v
+
+sudo apt install –reinstall ttf-mscorefonts-installer
+```
+---
+
 ## Desk Apps
 [Tilix](https://gnunn1.github.io/tilix-web/)  
 [VSCode](https://code.visualstudio.com/)  
