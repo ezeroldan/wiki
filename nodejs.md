@@ -7,6 +7,11 @@ curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt install -y nodejs
 sudo apt install -y npm
 ```
+## Typescript
+```BASH
+sudo npm install -g typescript
+sudo npm install -g ts-node
+```
 
 ## Vue
 
