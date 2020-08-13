@@ -21,7 +21,7 @@ mkdir .themes
 - [Frippery Move Clock](https://extensions.gnome.org/extension/2/move-clock)
 - [Removable Drive Menu](https://extensions.gnome.org/extension/7/removable-drive-menu/)
 - [Remove Dropdown Arrows](https://extensions.gnome.org/extension/800/remove-dropdown-arrows/)
-- [TopIcons Plus Git](https://extensions.gnome.org/extension/2311/topicons-plus/)
+- [Panel Osd](https://extensions.gnome.org/extension/708/panel-osd/)
 - [Sound Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
 
 ### Dock
