@@ -10,6 +10,7 @@ mkdir .themes
 
 ## Themes
 - [Yaru-Colors](https://www.gnome-look.org/p/1299514/)  
+- [NewAdwaitaSlimDark](https://github.com/ch4rcoil/NewAdwaitaSlimDark)
 
 ## Fonts
 [Open Sans](https://fonts.google.com/specimen/Open+Sans)  
