@@ -17,6 +17,7 @@ mkdir .themes
 [FiraCode](https://github.com/tonsky/FiraCode)  
 
 ## Extensions
+- [User Themes](https://extensions.gnome.org/extension/19/user-themes/)  
 
 ### Topbar
 - [Frippery Move Clock](https://extensions.gnome.org/extension/2/move-clock)
@@ -24,13 +25,11 @@ mkdir .themes
 - [Remove Dropdown Arrows](https://extensions.gnome.org/extension/800/remove-dropdown-arrows/)
 - [Panel Osd](https://extensions.gnome.org/extension/708/panel-osd/)
 - [Sound Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
+- [Easy Screencast](https://extensions.gnome.org/extension/690/easyscreencast/)
+- [Screenshot Tool](https://extensions.gnome.org/extension/1112/screenshot-tool/)
+- [Update Indicator](https://extensions.gnome.org/extension/1139/apt-update-indicator/)
+- [NetSpeed](https://extensions.gnome.org/extension/104/netspeed/)
 
 ### Dock
 - [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)  
 - [Dash to Panel](https://extensions.gnome.org/extension/1160/dash-to-panel/)  
-
-### Shell
-- [AlternateTab](https://extensions.gnome.org/extension/15/alternatetab/)  
-- [User Themes](https://extensions.gnome.org/extension/19/user-themes/)  
-- [GSConnect](https://extensions.gnome.org/extension/1319/gsconnect/)  
-- [Desktop Icons](https://extensions.gnome.org/extension/1465/desktop-icons/)  
