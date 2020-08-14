@@ -52,24 +52,11 @@ sudo systemctl disable mysql.service
 ```BASH
 cd ~/htdocs
 composer create-project phpmyadmin/phpmyadmin
-```
-
-```BASH
-ln -s /mnt/c/Users/Ezequiel/htdocs/phpmyadmin/phpmyadmin /mnt/c/Users/Ezequiel/htdocs/phpmyadmin/pma
-valet park
-valet secure pma
 valet secure phpmyadmin
 ```
 
 ```BASH
 cd ~/htdocs/phpmyadmin
-valet park
-valet secure pma
-valet secure phpmyadmin
-```
-
-```BASH
-cd ~/htdocs/phpmyadmin/phpmyadmin
 cp config.sample.inc.php config.inc.php
 sudo chmod 0755 config.inc.php
 ```
