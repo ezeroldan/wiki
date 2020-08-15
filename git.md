@@ -6,42 +6,11 @@ sudo apt update -y && sudo apt upgrade -y
 sudo apt install -y git
 ```
 
-### Configurar
 ```BASH
 git config --global user.name "Ezequiel Roldan"
 git config --global user.email "ezeroldan@gmail.com"
 git config --global color.ui auto
 ```
-
-### Interfaz Grafica
-```BASH
-sudo apt install -y rabbitvcs-nautilus
-```
-
----
-
-## cPanel 
-> FILES > Git Version Control
-
-### Deployment
-
-#### Push | Autimatic Deployment
-`cPanel => pull => PC => push => cPanel -> web`  
-Usar el cPanel como repositorio para subir los cambios  
-
-#### Pull | Manual Deployment
-`GitHub => pull => PC => push => GitHub => pull => cPanel -> web`  
-
-#### .cpanel.yml
-```YML
-deployment:
-  task:
-    - export DEPLOYPATH=/home/user/public_html
-    - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp style.css $DEPLOYPATH
-```
-
----
 
 ## Comandos
 

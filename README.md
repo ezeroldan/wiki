@@ -1,24 +1,20 @@
 # Linux
 
-1. [Apps](./apps.md)
-2. [Zsh](./zsh.md)
-
-## Development
-1. [Git](./git.md)
-1. [PHP](./php.md)
-2. [MySQL](./mysql.md)
-3. [NodeJs](./nodejs.md)
+- [Apps](./apps.md)
+- [Zsh](./zsh.md)
+- [Git](./git.md)
+- [NodeJs](./nodejs.md)
+- [PHP](./php.md)
+- [MySQL](./mysql.md)
+- [VS Code](./vscode.md)
+- [Gnome](./gnome.md)
 
 ## Utiles
-[Comandos](./comandos.md)
+- [SSH](./ssh.md)
+- [Comandos](./comandos.md)
+- [Windows Subsystem for Linux 2 (WSL 2)](./ws;.md)
 
-## Otros
-[exFat](./exfat.md)  
-[Elementary OS](./elementary_os.md)  
-[Virtual Box Guest](./virtual_box.md)  
-[Gnome](./gnome.md)  
-
-# Directorios del root
+## Directorios
 `Home` ~ Donde esta cada usuario
 `bin` Binarios - Los comandos que se ejecutan en consola.  
 `sbin` Sudo Binarios - Comandos que solo el sudo puede ejecutar  
@@ -38,8 +34,3 @@
 `tmp` Temporario - Donde se almacena session temporaria  
 `usr` Donde las aplicaciones para el usuario se instalan  
 `var` Variable - Archivos que varian de tamano  
-
-## YouTube
-[Linux File System](https://www.youtube.com/watch?v=HIXzJ3Rz9po)
-[Debian Package Management](https://www.youtube.com/watch?v=HC0J6JRx90o)
-[Laravel Geploy using GIT](https://www.youtube.com/watch?v=jbnm6fKvz8o)

@@ -28,43 +28,41 @@
 ## Extensions
 
 ### GENERAL
-- Text Manipulator
-- DotENV
-- Path Intellisense
+- "Text Manipulator"
+- "DotENV"
+- "Path Intellisense"
 
-- Markdown Shortcuts
-- Markdown Preview Github Styles
+- "Markdown Shortcuts"
+- "Markdown Preview Github Styles"
 
-- html-entities
+- "html-entities"
 
 ### PHP
-- Apache Conf
-- "PHP DocBlocker" - Neil Brayfield
-- "PHP Intelephense" - Ben Mewburn
-- PHP Getters Setters - phproberto
-- PHP Namespace Resolver
-- Smarty
+- "Apache Conf"
+- "PHP DocBlocker"
+- "PHP Intelephense"
+- "PHP Getters Setters"
+- "PHP Namespace Resolver"
+- "Smarty"
 
 ### LARAVEL
-- "Laravel Artisan"  - Ryan Naddy
-- "Laravel  Blade Spacer" - Austen Cameron
-- "Laravel Blade Snippets" - Winnie Lin
-- "Laravel goto view" - codingyu
+- "Laravel Artisan" 
+- "Laravel  Blade Spacer"
+- "Laravel Blade Snippets"
+- "Laravel goto view"
 - "laravel-goto-controller"
-- "Laravel Model Snippets" - Andy Hinkle
-- "Laravel 5 Snippets" - Winnie Lin	
-- Laravel Extra Intellisense" - amir
+- "Laravel Model Snippets"
+- "Laravel 5 Snippets"	
+- "Laravel Extra Intellisense"
 
 ### JAVASCRIPT
-- HTML CSS
-- SCSS Formatter
-- Vetur
-- Vue 2 Snippets - hollowtree
+- "SCSS Formatter"
+- "Vetur"
+- "Vue 2 Snippets"
 
 ## Themes
 - Default Material Dark Theme
 - Dark+ Tweaked
-- Light+ Tweaked
 
 [FiraCode](https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions)
 
