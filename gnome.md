@@ -6,6 +6,9 @@ sudo apt install -y gnome-tweak-tool
 sudo apt install -y chrome-gnome-shell
 mkdir .icons
 mkdir .themes
+
+sudo apt install gnome-session
+sudo update-alternatives --config gdm3-theme.gresource
 ```
 
 ## Themes
@@ -31,8 +34,6 @@ mkdir .themes
 - [Removable Drive Menu](https://extensions.gnome.org/extension/7/removable-drive-menu/)
 - [Screenshot Tool](https://extensions.gnome.org/extension/1112/screenshot-tool/)
 - [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
-- [Status Area Horizontal Spacing ](https://extensions.gnome.org/extension/355/status-area-horizontal-spacing/)
-- [TopIcons Plus](https://extensions.gnome.org/extension/1031/topicons/)
 
 ### Dock
 - [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)  
