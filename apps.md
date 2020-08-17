@@ -21,5 +21,7 @@ sudo fc-cache -f -v
 sudo apt install –reinstall ttf-mscorefonts-installer
 ```
 
+[PhotoGIMP](https://github.com/Diolinux/PhotoGIMP)
+
 ## Drivers
 [Asus Q325UA](https://www.asus.com/supportonly/Q325UA/HelpDesk_Download/)  
