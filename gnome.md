@@ -69,15 +69,28 @@ swipe:
     down:
       command: "xdotool key ctrl+alt+Up" # Switch to previous workspace
   4:
+    left:
+      command: "xdotool key alt+shift+Tab" # Switch Windows back
+    right:
+      command: "xdotool key alt+Tab" # Switch Windows forward
     up:
       command: "xdotool key super" # Activity
     down:
-      command: "xdotool key super+a" # Aplicaciones
+      command: "xdotool key super" # Activity
+
 pinch:
   in:
     command: "xdotool keydown ctrl click 4 keyup ctrl" # Zoom in
   out:
     command: "xdotool keydown ctrl click 5 keyup ctrl" # Zoom out
+
+threshold:
+  pinch: 0.5
+
+interval:
+  swipe: 0.75
+  pinch: 0.5
+
 ```
 
 ```bash
