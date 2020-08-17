@@ -20,6 +20,7 @@
   "javascript.format.semicolons": "insert",
   "typescript.format.semicolons": "insert",
   "terminal.integrated.fontSize": 13,
+  "terminal.integrated.fontFamily": "MesloLGS NF",
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.indent": 20,
   "window.zoomLevel": 0.3,
