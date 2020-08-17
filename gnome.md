@@ -20,7 +20,8 @@ sudo update-alternatives --config gdm3-theme.gresource
 - [FiraCode](https://github.com/tonsky/FiraCode)  
 
 ## Extensions
-- [User Themes](https://extensions.gnome.org/extension/19/user-themes/)  
+- [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
+- [Desktop Icons NG](https://extensions.gnome.org/extension/2087/desktop-icons-ng-ding/)
 
 ### Topbar
 - [Apt Update Indicator](https://extensions.gnome.org/extension/1139/apt-update-indicator/)
@@ -34,6 +35,7 @@ sudo update-alternatives --config gdm3-theme.gresource
 - [Removable Drive Menu](https://extensions.gnome.org/extension/7/removable-drive-menu/)
 - [Screenshot Tool](https://extensions.gnome.org/extension/1112/screenshot-tool/)
 - [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
+- [Transparent Top Bar](https://extensions.gnome.org/extension/1708/transparent-top-bar/)
 
 ### Dock
 - [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)  
