@@ -7,21 +7,23 @@
 ```JSON
 {
   "editor.fontSize": 13,
-  "editor.fontFamily": "Fira Code Light",
+  "editor.fontWeight": "400",
+  "editor.fontFamily": "Fira Code",
   "editor.renderWhitespace": "all",
   "editor.snippetSuggestions": "bottom",
   "editor.suggest.insertMode": "replace",
+  "files.eol": "\n",
+  "files.autoSave": "off",
   "php.suggest.basic": false,
   "emmet.triggerExpansionOnTab": true,
   "explorer.sortOrder": "type",
   "javascript.format.semicolons": "insert",
   "typescript.format.semicolons": "insert",
-  "files.autoSave": "off",
-  "files.eol": "\n",
   "terminal.integrated.fontSize": 13,
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.indent": 20,
-  "window.zoomLevel": 0.3
+  "window.zoomLevel": 0.3,
+  "window.menuBarVisibility": "hidden"
 }
 ```
 
