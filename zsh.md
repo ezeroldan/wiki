@@ -8,23 +8,16 @@ sudo usermod -s /usr/bin/zsh $(whoami)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-## Adicionales
+## Powerlevel10k
+
+### Meslo Nerd Font
+- [MesloLGS NF Regular.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
+- [MesloLGS NF Bold.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)
+- [MesloLGS NF Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)
+- [MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
+
+### Installation
 ```BASH
-sudo apt install -y zsh-theme-powerlevel9k
-sudo apt install -y zsh-syntax-highlighting
-
-echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> ~/.zshrc
-echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
-
-nano ~/.zshrc
-ZSH_THEME="agnoster"
-```
-
-## Eliminar usuario prompt
-```BASH
-prompt_context() {
-  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default ""
-  fi
-}
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+p10k configure
 ```
