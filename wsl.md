@@ -17,7 +17,7 @@
     "launchMode": "maximized",
     "profiles": {
         "defaults": {
-            "fontFace": "Fira Code",
+            "fontFace": "MesloLGS NF",
             "fontSize": 10,
             "useAcrylic": false,
             "acrylicOpacity": 0.8,
@@ -34,7 +34,7 @@
 ## Instalar Pogramas
 1. [ZSH](./zsh.md)
 2. [Git](./git.md)
-3. [PHP](./PHP.md)
+3. [PHP](./php.md)
 4. [MySQL](./mysql.md)
 5. [NodeJS](./nodejs.php)
 
@@ -68,7 +68,7 @@ composer global require valeryan/valet-wsl
 
 ## Symbolic Link
 ```BASH
-ln -s /mnt/c/Users/Ezequiel/htdocs /home/ezequiel/htdocs
+ln -s /mnt/c/Users/Ezequiel/htdocs /home/ezeroldan/htdocs
 ```
 
 ## Resolver error de DNS
@@ -76,36 +76,8 @@ ln -s /mnt/c/Users/Ezequiel/htdocs /home/ezequiel/htdocs
 echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf > /dev/null
 echo "nameserver 8.8.8.8" | sudo tee /etc/resolvconf/resolv.conf.d/base > /dev/null
 ```
-## MySql
-```BASH
-sudo usermod -d /var/lib/mysql/ mysql
-sudo service mysql start
-sudo mysql
-```
 
-### Instalar phpMyAdmin
-
-```BASH
-cd ~/htdocs
-mkdir phpmyadmin
-cd phpmyadmin
-composer create-project phpmyadmin/phpmyadmin
-ln -s /mnt/c/Users/Ezequiel/htdocs/phpmyadmin/phpmyadmin /mnt/c/Users/Ezequiel/htdocs/phpmyadmin/pma
-valet park
-```
 ## Secure https
-
-```BASH
-valet secure folder
-```
-
-Ejecutar:  
 `C:/tools/valet/certs/install_certs.cmd`
 
-## Cron Jobs
-Run `sudo crontab -e`  
-
-```BASH
-*/5 * * * * php /mnt/c/username/Projects/folder/artisan schedule:run >> /dev/null 2>&1
-```
 
