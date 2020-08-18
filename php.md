@@ -33,9 +33,18 @@ composer global require laravel/installer
 
 ## Valet
 
+### Linux
 ```BASH
 sudo apt install -y network-manager libnss3-tools jq xsel
+```
+### Linux
+```BASH
 composer global require cpriego/valet-linux
+```
+
+### [Windows Subsystem for Linux 2 (WSL 2)](./wsl.md)
+```BASH
+composer global require valeryan/valet-wsl
 ```
 
 ```BASH
