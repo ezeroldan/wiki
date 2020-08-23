@@ -12,6 +12,7 @@ sudo apt install -y zip unzip
 sudo apt install -y mlocate
 sudo apt install -y gnome-sushi
 
+sudo apt install -y vlc
 sudo apt install -y filezilla
 sudo apt install -y spotify-client
 sudo apt install -y thunderbird
