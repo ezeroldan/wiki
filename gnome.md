@@ -13,7 +13,7 @@ sudo update-alternatives --config gdm3-theme.gresource
 
 ## Themes
 - [Yaru-Colors](https://www.gnome-look.org/p/1299514/)  
-- [NewAdwaitaSlimDark](https://github.com/ch4rcoil/NewAdwaitaSlimDark)
+- [Adwaita-Slim](https://github.com/archbyte/Adwaita-Slim)
 
 ## Fonts
 - [Open Sans](https://fonts.google.com/specimen/Open+Sans)  
