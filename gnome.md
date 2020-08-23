@@ -22,6 +22,7 @@ sudo update-alternatives --config gdm3-theme.gresource
 ## Extensions
 - [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
 - [Desktop Icons NG](https://extensions.gnome.org/extension/2087/desktop-icons-ng-ding/)
+- [Multi Monitors](https://extensions.gnome.org/extension/921/multi-monitors-add-on/)
 
 ### Topbar
 - [Apt Update Indicator](https://extensions.gnome.org/extension/1139/apt-update-indicator/)
