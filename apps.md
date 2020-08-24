@@ -10,7 +10,8 @@ sudo apt install -y htop
 sudo apt install -y tree
 sudo apt install -y zip unzip
 sudo apt install -y mlocate
-sudo apt install -y gnome-sushi
+sudo apt install -y neofetch
+sudo apt install -y cmatrix
 
 sudo apt install -y vlc
 sudo apt install -y filezilla
@@ -18,6 +19,7 @@ sudo apt install -y spotify-client
 sudo apt install -y thunderbird
 sudo apt install -y thunderbird-locale-es-ar
 sudo apt install -y inkscape
+sudo apt install -y gnome-sushi
 ```
 
 ## Microsoft TrueType Fonts
