@@ -10,6 +10,8 @@ sudo add-apt-repository ppa:ondrej/php
 sudo apt update -y
 sudo apt install -y php7.4
 sudo apt install -y php-pear php7.4-curl php7.4-dev php7.4-gd php7.4-mbstring php7.4-zip php7.4-mysql php7.4-xml php7.4-sqlite3 php7.4-mysql php7.4-pgsql php7.4-soap
+
+sudo apt install -y php5.6
 ```
 
 ## Composer
