@@ -133,3 +133,8 @@ allow_url_fopen = On
 session.save_path = "/mnt/c/Users/Ezequiel/htdocs/sessions"
 
 ```
+
+## Compilar con Composer con PHP 5.6
+```bash
+php5.6 /usr/local/bin/composer install --no-dev --optimize-autoloader
+```
