@@ -8,10 +8,12 @@ sudo apt install -y git
 sudo apt update -y && sudo apt upgrade -y
 sudo add-apt-repository ppa:ondrej/php
 sudo apt update -y
+
 sudo apt install -y php7.4
 sudo apt install -y php-pear php7.4-curl php7.4-dev php7.4-gd php7.4-mbstring php7.4-zip php7.4-mysql php7.4-xml php7.4-sqlite3 php7.4-mysql php7.4-pgsql php7.4-soap
 
 sudo apt install -y php5.6
+sudo apt install -y php-pear php5.6-curl php5.6-dev php5.6-gd php5.6-mbstring php5.6-zip php5.6-mysql php5.6-xml php5.6-sqlite3 php5.6-mysql php5.6-pgsql php5.6-soap
 ```
 
 ## Composer
@@ -100,6 +102,7 @@ fastcgi_buffer_size 512k;
 ```BASH
 locate php.ini
 sudo nano /etc/php/7.4/fpm/php.ini
+sudo nano /etc/php/5.6/fpm/php.ini
 ```
 
 ```INI
