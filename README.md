@@ -10,7 +10,6 @@
 - [Gnome](./gnome.md)
 
 ## Utiles
-- [SSH](./ssh.md)
 - [Comandos](./comandos.md)
 - [Windows Subsystem for Linux 2 (WSL 2)](./ws;.md)
 

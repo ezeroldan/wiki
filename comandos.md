@@ -1,65 +1,57 @@
-# Comandos utiles
+# Comandos
 
-## Directorios & Archivos
 
-### General
+## Useful Commands for Navigating
 `ls` Listar archivos y carpetas  
-`ls -al` Lista formateada y archivos ocultos  
-
 `cd` Change directory - Navegar entre directorios  
 `pwd` Muestra el directorio actual  
+`mkdir` Crear un directorio  
+`rmdir` Remove directory (only works if empty)  
 
-`mkdir ...` Crear un directorio  
-`touch ...` Genera un archivos  
+## Commands for Working with Files
+`touch` Creates a file or updates the timestamp on an existing file  
+`cat` Outputs the full contents of a file  
+`head` Returns the first X lines of a file starting at the top  
+`tail` Returns the first X lines of a file starting at the bottom  
+`cp` Copies a file or directory  
+`rm` Removes a file or directory  
+`mv` Moves a file or folder  
+`less` Displays contents of file while allowing easy scrolling up and down  
+`diff` Compares two files for differences  
+`cmp` Checks if two files are identical on a byte-by-byte level  
+`file` Gets information on file type  
+`colordiff` Compare the two files and observe the difference  
 
-`rm ...` Borrar archivo  
-`rm -r ...` Borrar un directorio y su contenido  
-`rm -f ...` Forzar borrar un archivo  
-`rmdir ...` Borrar directorio  
+## Command Information
+`type` Get information on a command  
+`which` Find the location of the executable  
+`whereis` Find the executable location, source, and manual  
+`locate` Search a database index of the filesystem  
 
-`cp ... ...` Copiar  
-`mv ... ...` Mover/Renombrar  
-`ln -s ... ...` Generar un link simbolico  
-
-`cat ...` Mustra el contenido de un archivo  
-`more ...` Muestra el contenido de un archivo  
-`less ...` Muestra el contenido  
-`head ...` Muestra las primeras 10 lineas de un archivos  
-`tail ...` Muestra las ultimas 10 lineas de un archivo  
-`tail -f ...` Muestra contenido a medida crece  
-
-`nano` Editor en consola  
-
-### Permisos
+## Permisos
+`groups <username>` What groups a user is in  
 `chmod ... ...` Cambiar permisos  
 
 Tipo de Archivo
-- Archivo Normal
-d Directorio
-l Enlace
+`-` Archivo Normal
+`d` Directorio
+`l` Enlace
 
 Permisos del Propietario
 Permisos del Grupo del Propietario
 Permisos del Resto de Usuarios del Sistema
 
-
-# | Name | -
+n | Name    | -
 --|---------|--
 4 | Read    | r
 2 | Write   | w
 1 | Execute | x
 
- | owner | group | world
--|-------|-------|------
-
-
-
-
-owner-group-world  
-
-Ejemplo:  
+**Ejemplo:**  
 `chmod 777` owner: rwx - group: rwx - world: rwx  
 `chmod 755` owner: rw  - group: rx  - world: rx  
+
+![chmod](chmod.png)
 
 ## Compresion
 `tar cf ....tar` Generar archivo .tar  
