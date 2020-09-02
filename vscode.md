@@ -72,3 +72,11 @@
 ## Icons
 - Material Icon Theme
 - VSCode Great Icons
+
+## `$HOME/.vscode/argv.json`
+```JSON
+{
+	"disable-color-correct-rendering": true,
+	"disable-hardware-acceleration": true
+}
+```
