@@ -20,6 +20,8 @@ sudo apt install -y thunderbird
 sudo apt install -y thunderbird-locale-es-ar
 sudo apt install -y inkscape
 sudo apt install -y gnome-sushi
+
+sudo snap install --classic notepadqq
 ```
 
 ## Microsoft TrueType Fonts
