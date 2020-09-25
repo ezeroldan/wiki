@@ -6,25 +6,27 @@
 
 ```JSON
 {
-  "editor.fontSize": 13,
-  "editor.fontWeight": "400",
-  "editor.fontFamily": "Fira Code",
-  "editor.renderWhitespace": "all",
-  "editor.snippetSuggestions": "bottom",
-  "editor.suggest.insertMode": "replace",
-  "files.eol": "\n",
-  "files.autoSave": "off",
-  "php.suggest.basic": false,
-  "emmet.triggerExpansionOnTab": true,
-  "explorer.sortOrder": "type",
-  "javascript.format.semicolons": "insert",
-  "typescript.format.semicolons": "insert",
-  "terminal.integrated.fontSize": 13,
-  "terminal.integrated.fontFamily": "MesloLGS NF",
-  "workbench.tree.renderIndentGuides": "always",
-  "workbench.tree.indent": 20,
-  "window.zoomLevel": 0.3,
-  "window.menuBarVisibility": "hidden"
+    "workbench.colorTheme": "Dark+ Tweaked",
+    "workbench.iconTheme": "vscode-great-icons",
+    "editor.fontSize": 13,
+    "editor.fontWeight": "400",
+    "editor.fontFamily": "Fira Code",
+    "editor.renderWhitespace": "all",
+    "editor.snippetSuggestions": "bottom",
+    "files.eol": "\n",
+    "files.autoSave": "off",
+    "php.suggest.basic": false,
+    "emmet.triggerExpansionOnTab": true,
+    "explorer.sortOrder": "type",
+    "javascript.format.semicolons": "insert",
+    "typescript.format.semicolons": "insert",
+    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "workbench.tree.renderIndentGuides": "always",
+    "workbench.tree.indent": 20,
+    "window.zoomLevel": 1,
+    "vetur.format.defaultFormatter.ts": "vscode-typescript",
+    "vetur.format.defaultFormatter.html": "none"
 }
 ```
 
