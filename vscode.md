@@ -36,10 +36,8 @@
 - "Text Manipulator"
 - "DotENV"
 - "Path Intellisense"
-
 - "Markdown Shortcuts"
 - "Markdown Preview Github Styles"
-
 - "html-entities"
 
 ### PHP
@@ -51,13 +49,13 @@
 - "Smarty"
 
 ### LARAVEL
-- "Laravel Artisan" 
-- "Laravel  Blade Spacer"
+- "Laravel Artisan"
+- "Laravel Blade Spacer"
 - "Laravel Blade Snippets"
 - "Laravel goto view"
 - "laravel-goto-controller"
 - "Laravel Model Snippets"
-- "Laravel 5 Snippets"	
+- "Laravel 5 Snippets"
 - "Laravel Extra Intellisense"
 
 ### JAVASCRIPT
