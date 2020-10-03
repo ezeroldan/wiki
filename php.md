@@ -98,8 +98,7 @@ valet restart
 
 ```BASH
 sudo dnf install php-xdebug
-sudo touch /etc/php.d/30-xdebug.ini
-sudo nano /etc/php.d/30-xdebug.ini
+sudo nano /etc/php.d/15-xdebug.ini
 ```
 
 ```ini
