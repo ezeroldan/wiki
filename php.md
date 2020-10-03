@@ -49,8 +49,12 @@ sudo apt install -y network-manager libnss3-tools jq xsel
 ```BASH
 sudo dnf install nss-tools jq xsel
 sudo dnf install php-{cli,process,mbstring,mcrypt,xml}
-sudo setenforce 0
+
+sudo nano /etc/selinux/config
 ```
+`SELINUX=enforcing` => `SELINUX=permissive`
+`reboot`
+
 ### Instalacion
 ```BASH
 composer global require cpriego/valet-linux
