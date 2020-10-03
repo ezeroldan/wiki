@@ -1,11 +1,9 @@
 # PHP
 
-```BASH
-sudo apt install -y git
-```
+## Instalacion
 
+### Debian
 ```BASH
-sudo apt update -y && sudo apt upgrade -y
 sudo add-apt-repository ppa:ondrej/php
 sudo apt update -y
 
@@ -14,6 +12,10 @@ sudo apt install -y php-pear php7.4-curl php7.4-dev php7.4-gd php7.4-mbstring ph
 
 sudo apt install -y php5.6
 sudo apt install -y php-pear php5.6-curl php5.6-dev php5.6-gd php5.6-mbstring php5.6-zip php5.6-mysql php5.6-xml php5.6-sqlite3 php5.6-mysql php5.6-pgsql php5.6-soap
+```
+### Fedora
+```bash
+sudo dnf -y install php  php-cli php-fpm php-mysqlnd php-zip php-devel php-gd php-mcrypt php-mbstring php-curl php-xml php-pear php-bcmath php-json 
 ```
 
 ## Composer
@@ -37,10 +39,19 @@ composer global require laravel/installer
 
 ## Valet
 
+## Valet Linux
+
+### Debian
 ```BASH
 sudo apt install -y network-manager libnss3-tools jq xsel
 ```
-### Linux
+### Fedora
+```BASH
+sudo dnf install nss-tools jq xsel
+sudo dnf install php-{cli,process,mbstring,mcrypt,xml}
+sudo setenforce 0
+```
+### Instalacion
 ```BASH
 composer global require cpriego/valet-linux
 ```
