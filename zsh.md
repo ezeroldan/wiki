@@ -1,10 +1,21 @@
 # Zsh
 
 ## Instalar
+
+### Debian
 ```BASH
-sudo apt update -y
 sudo apt install -y zsh
 sudo usermod -s /usr/bin/zsh $(whoami)
+```
+
+### Fedora
+```BASH
+sudo dnf install -y zsh
+sudo usermod -s /usr/bin/zsh $(whoami)
+```
+
+### oh my zsh
+```BASH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
