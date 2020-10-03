@@ -1,5 +1,6 @@
 # Apps
 
+## Debian
 ```BASH
 sudo apt update -y && sudo apt upgrade -y
 
@@ -20,8 +21,30 @@ sudo apt install -y thunderbird
 sudo apt install -y thunderbird-locale-es-ar
 sudo apt install -y inkscape
 sudo apt install -y gnome-sushi
+```
 
-sudo snap install --classic notepadqq
+## Fedora
+```BASH
+sudo dnf update
+
+sudo rpm -Uvh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo rpm -Uvh http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+sudo dnf install -y htop
+sudo dnf install -y neofetch
+sudo dnf install -y cmatrix
+
+sudo dnf install -y vlc
+sudo dnf install -y inkscape
+sudo dnf install -y filezilla
+sudo dnf install -y thunderbird
+```
+
+## Flatpak
+```BASH
+flatpak install flathub com.spotify.Client
+flatpak install flathub com.notepadqq.Notepadqq
 ```
 
 ## Microsoft TrueType Fonts
