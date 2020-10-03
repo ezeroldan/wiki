@@ -86,13 +86,22 @@ Los untracked son eliminados junto con los directorios
 `git rm [file]`  
 Borra los archivos del working directory y stages los cambios
 
+`git stash`  
+Muevo todo los archivos del working directory al stash
+
 ### Branching
 
 `git branch`  
-Listar todas las branchs
+Listar las branchs locales
+
+`git branch -a`  
+Listar todas las branchs incluso las remotas
 
 `git branch [BRANCH]`  
 Generar una nueva rama
+
+`git branch -m [BRANCH-A] [BRANCH-B]`
+Renonmbrar un branch
 
 `git checkout [BRANCH:master]`  
 Cambiar a una branch
@@ -116,6 +125,9 @@ Sube todos los cambios a GitHub
 
 `git push -f [ALIAS:origin] [BRANCH:master]`  
 Forzar actulizar los cambios
+
+`git push -u [ALIAS:origin] [BRANCH]`  
+Sube un branch al repositorio remoto
 
 `git fetch [BOOKMARK]`  
 Descarga toda la historia desde el repositorio
