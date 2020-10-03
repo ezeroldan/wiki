@@ -1,8 +1,16 @@
 # MariaDB - MySQL
 
 ## Instalar MariaDB
+
+### Debian
 ```BASH
 sudo apt install -y mariadb-server
+```
+
+### Fedora
+```BASH
+sudo dnf install mariadb mariadb-server
+sudo systemctl start mariadb
 ```
 
 ## Segurizar
@@ -20,17 +28,6 @@ sudo mysql -u root -p
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost';
 FLUSH PRIVILEGES;
-```
-
-## Status
-```BASH
-sudo systemctl status mariadb
-sudo mysql -V
-```
-
-## Desinstalar
-```BASH
-sudo apt remove -y mariadb-server
 ```
 
 ## Habilitar en boot
