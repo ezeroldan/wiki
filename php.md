@@ -77,14 +77,11 @@ sudo systemctl stop apache2
 sudo systemctl disable apache2
 ```
 
-## Xdebug 
-[xdebug](https://xdebug.org/docs/install)  
+## Xdebug  
 
+### Debian
 ```BASH
 sudo apt install -y php-xdebug
-```
-
-```BASH
 sudo nano /etc/php/7.4/mods-available/xdebug.ini
 ```
 `xdebug.show_error_trace = 1`
@@ -93,29 +90,58 @@ sudo nano /etc/php/7.4/mods-available/xdebug.ini
 valet restart
 ```
 
+### Fedora
+
+```BASH
+sudo dnf install php-xdebug
+sudo touch /etc/php.d/30-xdebug.ini
+sudo nano /etc/php.d/30-xdebug.ini
+```
+
+```ini
+zend_extension="/usr/lib64/php/modules/xdebug.so"
+xdebug.remote_log="/tmp/xdebug.log"
+xdebug.profiler_enable = 1
+xdebug.remote_enable=on
+xdebug.remote_port=9000
+xdebug.remote_autostart=0
+xdebug.remote_connect_back=on
+xdebug.idekey=editor-xdebug
+```
+
 ## NGINX Config
+
 ```BASH
 sudo nano /etc/nginx/nginx.conf
 valet restart
 ```
 
 ```
-client_header_timeout 3000;
-client_body_timeout 3000;
-client_max_body_size 100M;
-fastcgi_read_timeout 3000;
-fastcgi_buffers 8 512k;
-fastcgi_buffer_size 512k;
+http{
+    client_header_timeout 3000;
+    client_body_timeout 3000;
+    client_max_body_size 100M;
+    fastcgi_read_timeout 3000;
+    fastcgi_buffers 8 512k;
+    fastcgi_buffer_size 512k;
+}
 ```
 
-
 ## Configurar PHP
+
+### Debian
 ```BASH
 locate php.ini
 sudo nano /etc/php/7.4/fpm/php.ini
 sudo nano /etc/php/5.6/fpm/php.ini
 ```
 
+### Fedora
+```BASH
+sudo nano /etc/php.ini
+```
+
+### Configuracion
 ```INI
 
 [PHP]
@@ -139,10 +165,6 @@ upload_max_filesize = 15M
 max_file_uploads = 20
 
 allow_url_fopen = On
-
-[Session]
-session.save_path = "/mnt/c/Users/Ezequiel/htdocs/sessions"
-
 ```
 
 ## Compilar con Composer con PHP 5.6
