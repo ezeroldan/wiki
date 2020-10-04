@@ -26,6 +26,7 @@ sudo update-alternatives --config gdm3-theme.gresource
 - [Animation Tweaks](https://extensions.gnome.org/extension/1680/animation-tweaks/)
 
 ### Topbar
+- [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/appindicator-support/)
 - [Apt Update Indicator](https://extensions.gnome.org/extension/1139/apt-update-indicator/)
 - [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
 - [Caffeine](https://extensions.gnome.org/extension/517/caffeine/)
