@@ -2,7 +2,7 @@
 
 [Learn how to install WSL 2](https://www.youtube.com/watch?v=ilKQHAFeQR0)  
 
-## Windows Features
+## Turn windows features on or off
 - Virtual Machine Platform
 - Windows Subsystem for Linux
 
