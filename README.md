@@ -11,7 +11,7 @@
 
 ## Utiles
 - [Comandos](./comandos.md)
-- [Windows Subsystem for Linux 2 (WSL 2)](./ws;.md)
+- [Windows Subsystem for Linux 2 (WSL 2)](./wsl.md)
 
 ## Directorios
 - `Home` ~ Donde esta cada usuario
