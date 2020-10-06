@@ -27,9 +27,10 @@ sudo apt install -y gnome-sushi
 ```BASH
 sudo dnf update
 
-sudo rpm -Uvh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-sudo rpm -Uvh http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+sudo dnf copr enable kwizart/fedy
+sudo dnf install fedy -y
 
 sudo dnf install -y htop
 sudo dnf install -y neofetch
