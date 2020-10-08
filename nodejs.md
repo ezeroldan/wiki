@@ -3,31 +3,39 @@
 ## Instalar
 
 ### Debian
-```BASH
+```bash
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt install -y nodejs
 sudo apt install -y npm
 ```
 
 ### Fedora
-```BASH
+```bash
 sudo dnf install nodejs
 ```
 
 ## Typescript
-```BASH
+```bash
 sudo npm install -g typescript
 sudo npm install -g ts-node
 ```
 
 ## Vue
-
-### Instalar
-```BASH
+```bash
 sudo npm install -g @vue/cli
+sudo npm install -g @vue/cli-init
 ```
 
-### Actualizar
-```BASH
-sudo npm update -g @vue/cli
+## NativeScript
+
+```bash
+sudo npm install -g nativescript
 ```
+
+```bash
+vue init nativescript-vue/vue-cli-template <project-name>
+
+tns run ios --bundle
+tns run android --bundle
+```
+[NativeScript-Vue With TypeScript](https://nativescript.org/blog/nativescript-vue-with-class-components/)
