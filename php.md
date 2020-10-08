@@ -15,7 +15,7 @@ sudo apt install -y php-pear php5.6-curl php5.6-dev php5.6-gd php5.6-mbstring ph
 ```
 ### Fedora
 ```bash
-sudo dnf -y install php  php-cli php-fpm php-mysqlnd php-zip php-devel php-gd php-mcrypt php-mbstring php-curl php-xml php-pear php-bcmath php-json 
+sudo dnf -y install php  php-cli php-fpm php-mysqlnd php-zip php-devel php-gd php-mcrypt php-mbstring php-curl php-xml php-pear php-bcmath php-json php-soap 
 ```
 
 ## Composer
