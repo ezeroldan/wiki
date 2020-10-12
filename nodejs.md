@@ -33,6 +33,11 @@ sudo npm install -g nativescript
 ```
 
 ```bash
+sudo dnf install java-latest-openjdk
+sudo alternatives --config javac
+```
+
+```bash
 vue init nativescript-vue/vue-cli-template <project-name>
 
 tns run ios --bundle
