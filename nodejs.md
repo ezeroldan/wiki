@@ -35,6 +35,13 @@ sudo npm install -g nativescript
 ```bash
 sudo dnf install java-latest-openjdk
 sudo alternatives --config javac
+dnf install java-devel
+```
+
+```bash
+export JAVA_HOME=$(update-alternatives --query javac | sed -n -e 's/Best: *\(.*\)\/bin\/javac/\1/p')
+export ANDROID_HOME="/home/ezeroldan/Android/Sdk"
+export PATH="${PATH}:${ANDROID_HOME}/tools/:${ANDROID_HOME}/tools/bin/:${ANDROID_HOME}/platform-tools/"
 ```
 
 ```bash
