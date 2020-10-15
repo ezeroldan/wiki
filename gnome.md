@@ -16,8 +16,9 @@ sudo update-alternatives --config gdm3-theme.gresource
 - [Adwaita-Slim](https://github.com/archbyte/Adwaita-Slim)
 
 ## Fonts
-- [Open Sans](https://fonts.google.com/specimen/Open+Sans)  
-- [FiraCode](https://github.com/tonsky/FiraCode)  
+- [Ubuntu](https://fonts.google.com/specimen/Ubuntu)
+- [FiraCode](https://github.com/tonsky/FiraCode)
+- [Open Sans](https://fonts.google.com/specimen/Open+Sans)
 
 ## Extensions
 - [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
