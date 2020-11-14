@@ -14,6 +14,7 @@ sudo update-alternatives --config gdm3-theme.gresource
 ## Themes
 - [Yaru-Colors](https://www.gnome-look.org/p/1299514/)  
 - [Adwaita-Slim](https://github.com/archbyte/Adwaita-Slim)
+- [Newaita](https://www.gnome-look.org/p/1243493/)
 
 ## Fonts
 - [Ubuntu](https://fonts.google.com/specimen/Ubuntu)
@@ -40,67 +41,8 @@ sudo update-alternatives --config gdm3-theme.gresource
 - [Screenshot Tool](https://extensions.gnome.org/extension/1112/screenshot-tool/)
 - [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
 - [Transparent Top Bar](https://extensions.gnome.org/extension/1708/transparent-top-bar/)
+- [Unite](https://extensions.gnome.org/extension/1287/unite/)
 
 ### Dock
 - [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)  
 - [Dash to Panel](https://extensions.gnome.org/extension/1160/dash-to-panel/)  
-
-
-
-## Touchpad Gestures 
-[Fusuma](https://github.com/iberianpig/fusuma)
-
-```bash
-sudo gpasswd -a $USER input
-sudo reboot
-sudo apt install libinput-tools -y
-sudo apt install xdotool -y
-sudo apt install ruby -y
-sudo gem install fusuma
-mkdir -p ~/.config/fusuma
-nano ~/.config/fusuma/config.yml
-```
-
-```yaml
-swipe:
-  3:
-    left:
-      command: "xdotool key alt+Right" # History forward
-    right:
-      command: "xdotool key alt+Left" # History back
-    up:
-      command: "xdotool key ctrl+alt+Down" # Switch to next workspace
-    down:
-      command: "xdotool key ctrl+alt+Up" # Switch to previous workspace
-  4:
-    left:
-      command: "xdotool key alt+shift+Tab" # Switch Windows back
-    right:
-      command: "xdotool key alt+Tab" # Switch Windows forward
-    up:
-      command: "xdotool key super" # Activity
-    down:
-      command: "xdotool key super" # Activity
-
-pinch:
-  in:
-    command: "xdotool keydown ctrl click 4 keyup ctrl" # Zoom in
-  out:
-    command: "xdotool keydown ctrl click 5 keyup ctrl" # Zoom out
-
-threshold:
-  pinch: 0.5
-
-interval:
-  swipe: 0.75
-  pinch: 0.5
-
-```
-
-```bash
-gnome-session-properties
-/usr/local/bin/fusuma -d
-```
-
-
-
