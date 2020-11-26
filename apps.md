@@ -5,6 +5,7 @@
 sudo apt update -y && sudo apt upgrade -y
 
 sudo apt install -y software-properties-common
+sudo apt install -y vim
 sudo apt install -y curl
 sudo apt install -y wget
 sudo apt install -y htop
@@ -32,6 +33,7 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 sudo dnf copr enable kwizart/fedy
 sudo dnf install fedy -y
 
+sudo dnf install -y vim
 sudo dnf install -y htop
 sudo dnf install -y neofetch
 sudo dnf install -y cmatrix
