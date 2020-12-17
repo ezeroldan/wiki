@@ -83,6 +83,18 @@ DROP DATABASE database_name;
 DROP DATABASE IF EXISTS database_name;
 ```
 
+### Backups
+
+#### Importar
+```SQL
+mysql -u USER -p -h localhost DB_NAME < data.sql
+```
+
+#### Exportar
+```SQL
+mysqldump -u USER -p DB_NAME > filename.sql
+```
+
 ### Usuarios
 
 #### Crear un nuevo Usuario
