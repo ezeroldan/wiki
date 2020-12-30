@@ -87,12 +87,12 @@ DROP DATABASE IF EXISTS database_name;
 
 #### Importar
 ```SQL
-mysql -u USER -p -h localhost DB_NAME < data.sql
+mysql -u root -p -h localhost DB_NAME < filename.sql
 ```
 
 #### Exportar
 ```SQL
-mysqldump -u USER -p DB_NAME > filename.sql
+mysqldump -u root -p DB_NAME > filename.sql
 ```
 
 ### Usuarios
