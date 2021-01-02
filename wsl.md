@@ -41,20 +41,19 @@
 ## Acrylic Setup (Windows)
 
 ### Instalar
-[Acrylic DNS Proxy](http://mayakron.altervista.org/wikibase/show.php?id=AcrylicHome)
-
-[Windows 10 Configuration](https://mayakron.altervista.org/support/acrylic/Windows10Configuration.htm)
+- [Acrylic DNS Proxy](http://mayakron.altervista.org/wikibase/show.php?id=AcrylicHome)
+- [Windows 10 Configuration](https://mayakron.altervista.org/support/acrylic/Windows10Configuration.htm)
 
 ### Configurar
 `Control Panel\Network and Internet\Network Connections`  
 
 #### Internet Protocol Version 4 (TCP/IPv4)
-`127.0.0.1`  
-`8.8.8.8`  
+- `127.0.0.1`
+- `8.8.8.8`
 
 #### Internet Protocol Version 6 (TCP/IPv6)
-`::1`  
-`2001:4860:4860::8888`  
+- `::1`
+- `2001:4860:4860::8888`
 
 1. Editar **Acrylic Host File**
 2. `127.0.0.1 *.test`
@@ -62,17 +61,17 @@
 4. Start Acrylic Service
 
 ## Valet
-```BASH
+```bash
 composer global require valeryan/valet-wsl
 ```
 
 ## Symbolic Link
-```BASH
+```bash
 ln -s /mnt/c/Users/Ezequiel/htdocs /home/ezeroldan/htdocs
 ```
 
 ## Resolver error de DNS
-```BASH
+```bash
 echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf > /dev/null
 echo "nameserver 8.8.8.8" | sudo tee /etc/resolvconf/resolv.conf.d/base > /dev/null
 ```

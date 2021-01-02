@@ -3,41 +3,41 @@
 ## Instalar MariaDB
 
 ### Debian
-```BASH
+```bash
 sudo apt install -y mariadb-server
 ```
 
 ### Fedora
-```BASH
+```bash
 sudo dnf install mariadb mariadb-server
 sudo systemctl start mariadb
 ```
 
 ## Segurizar
-```BASH
+```bash
 sudo mysql_secure_installation
 ```
 
 ## Ajustar usuario ROOT
 
-```BASH
+```bash
 sudo mysql -u root -p
 ```
 
-```SQL
+```sql
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
 ## Habilitar en boot
-```BASH
+```bash
 sudo systemctl enable mariadb
 sudo systemctl enable mysql.service
 ```
 
 ## Deshabilitar en boot
-```BASH
+```bash
 sudo systemctl disable mariadb
 sudo systemctl disable mysql.service
 ```
@@ -46,13 +46,13 @@ sudo systemctl disable mysql.service
 
 ## Instalar phpMyAdmin
 
-```BASH
+```bash
 cd ~/htdocs
 composer create-project phpmyadmin/phpmyadmin
 valet secure phpmyadmin
 ```
 
-```BASH
+```bash
 cd ~/htdocs/phpmyadmin
 cp config.sample.inc.php config.inc.php
 sudo chmod 0755 config.inc.php
@@ -67,18 +67,18 @@ sudo chmod 0755 config.inc.php
 ### Database
 
 #### Crear una nueva Base
-```SQL
+```sql
 CREATE DATABASE database_name;
 CREATE DATABASE IF NOT EXISTS database_name;
 ```
 
 #### Listar todas las Bases
-```SQL
+```sql
 SHOW DATABASES;
 ```
 
 #### Borrar una Base
-```SQL
+```sql
 DROP DATABASE database_name;
 DROP DATABASE IF EXISTS database_name;
 ```
@@ -86,57 +86,57 @@ DROP DATABASE IF EXISTS database_name;
 ### Backups
 
 #### Importar
-```SQL
+```sql
 mysql -u root -p -h localhost DB_NAME < filename.sql
 ```
 
 #### Exportar
-```SQL
+```sql
 mysqldump -u root -p DB_NAME > filename.sql
 ```
 
 ### Usuarios
 
 #### Crear un nuevo Usuario
-```SQL
+```sql
 CREATE USER 'database_user'@'localhost' IDENTIFIED BY 'user_password';
 CREATE USER IF NOT EXISTS 'database_user'@'localhost' IDENTIFIED BY 'user_password';
 ```
 
 #### Cambiar la password de un usuario
-```SQL
+```sql
 ALTER USER 'database_user'@'localhost' IDENTIFIED BY 'new_password';
 SET PASSWORD FOR 'database_user'@'localhost' = PASSWORD('new_password');
 ```
 
 #### Listar todos los Usuarios
-```SQL
+```sql
 SELECT user, host FROM mysql.user;
 ```
 
 #### Borrar un Usuario
-```SQL
+```sql
 DROP USER 'database_user'@'localhost';
 ```
 
 ### Privilegios
 
 #### Otorgar permisos a un usuario
-```SQL
+```sql
 GRANT ALL PRIVILEGES ON *.* TO 'database_user'@'localhost';
 GRANT ALL PRIVILEGES ON database_name.* TO 'database_user'@'localhost';
 ```
 
 #### Remover permisos a un Usuario
-```SQL
+```sql
 REVOKE ALL PRIVILEGES ON database_name.* TO 'database_user'@'localhost';
 ```
 
 #### Mostrar privilegios de un Usuario
-```SQL
+```sql
 SHOW GRANTS FOR 'database_user'@'localhost';
 ```
 
-```SQL
+```sql
 FLUSH PRIVILEGES;
 ```

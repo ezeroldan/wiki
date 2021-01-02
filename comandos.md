@@ -1,138 +1,293 @@
-# Comandos
+# Linux
 
+- `|` Pasa el resultado de un comando a otro
 
-## Useful Commands for Navigating
-`ls` Listar archivos y carpetas  
-`cd` Change directory - Navegar entre directorios  
-`pwd` Muestra el directorio actual  
-`mkdir` Crear un directorio  
-`rmdir` Remove directory (only works if empty)  
+## Environment Variables
+- `echo $VAR_NAME` Ver contenido de una variable del sistema
+- `printenv` Listar las variables del sistema
+- `printenv HOME` Listar contenido de una variable
+- `export VAR="value"` Generar una variable del sistema
+- `unset VAR` Remover una variable
+
+## Buscar comandos
+- `wich cat` Buscar ubicacion de un comando
+- `man -k calendar` Buscar un comando segun keyword
+- `type` Get information on a command
+- `whereis` Find the executable location, source, and manual
+
+## Input Output and Redirection
+- `0` Standard Input  stdin
+- `1` Standard Output stdout
+- `2` Standard Error  stderr
+
+### Redirection
+- `>` Redirecciona el output a un archivo (Truncate)
+- `>>` Concatena el output a un archivo
+- `<` Envia el contenido de un archivo a un comando
+- `&` Redirecciona a otro file descriptor
+- `2>&1` Combinar el stderr con el stdout
+- `2>file` Enviar errores (stderr) a un archivo
+- `>/dev/null` Redirecciona el output a la nada
+
+## Navegar en archivos
+- `ls` Listar archivos y carpetas
+- `cd` Change directory - Navegar entre directorios
+- `pwd` Imprimir directorio actual
+- `echo $OLDPWD` Imprimir directorio anterior
+- `mkdir` Crear un directorio
+- `mkdir -p dir1/dir2/dir3` Generar directorios en cascada
+- `rmdir` Remove directory (only works if empty)
+
+## Symbolic Links
+- `ln -s ABS_PATH NAME` Generar el link simbolico
 
 ## Commands for Working with Files
-`touch` Creates a file or updates the timestamp on an existing file  
-`cat` Outputs the full contents of a file  
-`head` Returns the first X lines of a file starting at the top  
-`tail` Returns the first X lines of a file starting at the bottom  
-`cp` Copies a file or directory  
-`rm` Removes a file or directory  
-`mv` Moves a file or folder  
-`less` Displays contents of file while allowing easy scrolling up and down  
-`diff` Compares two files for differences  
-`cmp` Checks if two files are identical on a byte-by-byte level  
-`file` Gets information on file type  
-`colordiff` Compare the two files and observe the difference  
+- `touch` Creates a file or updates the timestamp on an existing file
+- `cat` Outputs the full contents of a file
+- `head` Returns the first X lines of a file starting at the top
+- `tail` Returns the first X lines of a file starting at the bottom
+- `cp` Copies a file or directory
+- `rm` Removes a file or directory
+- `mv` Moves a file or folder
+- `less` Displays contents of file while allowing easy scrolling up and down
+- `diff file1 file2` Comparar dos archivos
+- `sdiff file1 file2` Comparar dos archivos con pantalla partida (side-by-side)
+- `vimdiff file1 file2` Destacar diferencias en vim
+- `cmp` Checks if two files are identical on a byte-by-byte level
+- `colordiff` Compare the two files and observe the difference
+- `sed 's/PATTERN/TEXT/'` Sustitucion de texto
 
-## Command Information
-`type` Get information on a command  
-`which` Find the location of the executable  
-`whereis` Find the executable location, source, and manual  
-`locate` Search a database index of the filesystem  
+## Finding Files and Directories
+- `find DIRECTORIO -iname NOMBRE` Buscar por nombre
+- `find DIRECTORIO -type(d f l) NOMBRE` Buscar por tipo de archivo y nombre
+- `file ARCHIVO` Indica el tipo de un archivo
+- `locate NAME` Buscar usan el index de archivos
+
+## Searching in Files
+- `grep -[i c n v r w e] PATTERNS [FILE]` Busca dentro de un archivo (global regular expression print)
+  - `-i` Busqueda caseinsesitive
+  - `-c` Total de macheos
+  - `-n` Con lineas de numero
+  - `-v` Buscar lo que no coincide
+  - `-r` Recursivamente
+  - `-w` Coincidir palabra entera
+  - `-e` Expresion a buscar
+  - `-o` Imprime solo el texto encontrado
+- `strings ` Muestra los caracteres imprimibles de un archivo
+- `cut -[d f] FILE` Remueve partes de cada linea de un archivo
+  - `-d` Delimintador
+  - `-f` Muestra Nth campo 
+  - `cut -d' ' -f2,3 FILE` Obtener el segundo y tercer campo separando por espacio
+- `sort -[b d f h n r] FILE` Ordena un archivo
+- `tr '' ''` Translate un caracter
+- `column -[t] FILE` Arma lista columnada
+- `more` Paginador simple
+- `less` Paginador mas complejo
 
 ## Permisos
-`groups <username>` What groups a user is in  
-`chmod ... ...` Cambiar permisos  
+- `groups USER` `id -Gn` Ver los grupos de un usuario
+- `chmod [u g o a] [+- wrx] [file/folder]` Los permisos tambien son llamados modos
+  - Entidad
+    - *u* User
+    - *g* Group
+    - *o* Other
+    - *a* All
+  - Operacion
+    - *+* Dar el Permiso
+    - *-* Eliminar el Permiso
+  - Permiso
+    - *w* Write
+    - *r* Read
+    - *x* Execute
 
-Tipo de Archivo
-`-` Archivo Normal
-`d` Directorio
-`l` Enlace
+- `chgrp [OPTION] GROUP FILE` Cambia el grupo de un archivo
+- `umask [-S] [mode]` 
 
-Permisos del Propietario
-Permisos del Grupo del Propietario
-Permisos del Resto de Usuarios del Sistema
-
-n | Name    | -
---|---------|--
-4 | Read    | r
-2 | Write   | w
-1 | Execute | x
-
-**Ejemplo:**  
-`chmod 777` owner: rwx - group: rwx - world: rwx  
-`chmod 755` owner: rw  - group: rx  - world: rx  
-
-![chmod](chmod.png)
+## Switching Users and Running Commands as Others
+- `su [username=root]` Loguearte como otro usuario manteniendo las variables del sistema
+- `su - [username=root]` Loguearte a la cuenta del usuario 
+- `sudo -i` Loguearte como usuario root
+- `whoami` Muestra el usuario que estoy usando
 
 ## Compresion
-`tar cf ....tar` Generar archivo .tar  
-`tar xf ....tar` Extraer archivo
-`tar tf ....tar` Mostrar contenido del archivo  
-
-`gzip ...` Generar gzip de un archivo  
-`gzip -d ....gz` Extraer archivo
+- `tar cf ....tar` Generar archivo .tar
+- `tar xf ....tar` Extraer archivo
+- `tar tf ....tar` Mostrar contenido del archivo
+  
+- `gzip ...` Generar gzip de un archivo
+- `gzip -d ....gz` Extraer archivo
 
 ## SSH
-`ssh user@host` Conectar al host  
-`ssh -p port user@host` Se conecta mediante el puerto  
-`ssh -D port user@host` Conecta y usa bind port  
+- `ssh user@host` Conectar al host
+- `ssh -p port user@host` Se conecta mediante el puerto
+- `ssh -D port user@host` Conecta y usa bind port
 
 ## Otros
-`sudo` Super Usuario DO  
-`clear` Limpia la consola  
-`history` Muestra el historial de comandos  
-`uname -a` Muestra info del sistema
+- `sudo` Super Usuario DO
+- `clear` Limpia la consola
+- `history` Muestra el historial de comandos
+- `echo $HISTSIZE` Muestra el max de comandos almacenados
 
-## Monitoreo de Procesos
-`top` Muestra los procesos  
-`htop` Muestra los procesos con mas info
+## Monitorear Procesos
+- `ps -[e f u p H]` Ver Procesos ejecutandose
+  - `-e` Mostrar todos los procesos
+  - `-f` Lista completa
+  - `-u` Los procesos de un Usuario
+  - `-p` Info de un proceso puntual
+  - `-H` Muesta el arbol de procesos
+- `ps aux` Muestra procesos activos detallados  
+- `pstree` Muestra procesos en forma de arbol
+- `top` Muestra los procesos  
+- `htop` Muestra los procesos con mas info
 
-`ps` Muestra procesos activos  
-`ps aux` Muestra procesos activos detallados  
+### Foreground && Background Processes
+- `command &` Inicia el comando en Background
+- `CTRL` + `C` Mata el proceso
+- `CTRL` + `Z` Suspende el proceso
 
-`kill ...` Matar proceso con el ID  
-`killall ...` Matar todos procesos de nombre  
-
-`bg` Lista procesos de fondo  
-`fg`  
-`fg n`  
+- `bg [%num]` Enviar un procesos suspendido al Background
+- `fg [%num]` Enviar un proceso 
+- `kill [%num]`Matar un proceso
+- `jobs [%num]` Listar los procesos
 
 ## Network
-`ping ...` Muestra ip de un dominio  
-`who is ...` Detalles de un Dominio  
+- `ping ...` Muestra ip de un dominio
+- `who is ...` Detalles de un Dominio
 
-`dig ...` Retorna el DNS de un dominio  
-`dig -x ...` Busqueda invertida de host
+- `dig ...` Retorna el DNS de un dominio
+- `dig -x ...` Busqueda invertida de host
 
-`wget ...` Descargar un archivo  
-`wget -c ...` Continua una descarga  
-`wget -r ...` Descarga recursivamente archivos de una url
+- `wget ...` Descargar un archivo
+- `wget -c ...` Continua una descarga
+- `wget -r ...` Descarga recursivamente archivos de una url
 
-`ifconfig` Muestra la info del red  
-`iwconfig` Muestra la info del wifi  
+- `ifconfig` Muestra la info del red  
+- `iwconfig` Muestra la info del wifi
+
+### Transferring and Copying Files over the Network
+- `sftp CLIENT` Conectarse a Servidor externo
+- `lpwd` pwd en local
+-`lls` ls en local
+- `put FILE` Subir archivos al sevidor
+- `quit` Salir del servidor remoto
+- `scp FILE SERVER:/PATH` Copiar archivo al servidor remoto
 
 ## Informacion del Sistema
-`date` Ver hora y fecha actual  
-`cal` Muestra calendario del mes  
-`uptime` Muestra uptime
+- `uname -a` Muestra info del sistema
+- `date` Ver hora y fecha actual
+- `cal` Muestra calendario del mes
+- `uptime` Muestra uptime
+- `df` Muestra espacio en disco
+- `du` Muestra espacio usado
+- `lsusb` Muestra las unidades USB
+- `blkid` Muestra info de los discos
+- `du -[s h] FILES` Uso del disco
+  - `s` Muestra solo el size
+  - `h` Human sizes
 
-`w` Usuarios logueados  
-`whoami` Muestra el usuario con el que estoy logueado  
-
-`man ...` Informacion de un comando  
-
-`df` Muestra espacio en disco  
-`du` Muestra espacio usado  
-
-`lsusb` Muestra las unidades USB
-`blkid` Muestra info de los discos  
+## Alias
+- `alias name=''` Generar un Alias en el archivo de config
+- `unlias name` Eliminar un Alias
+- `alias` Listar todas los alias
+- `echo "alias name='value'" >> ~/.zshrc` Agregar Alias al archivo de configuracion
 
 ## Package Manager
+- `sudo apt install` Instalar paquete
+- `sudo apt remove` Remover paquete
+- `sudo apt update` Refrescar index del repositorio
+- `sudo apt upgrade` Actualizar todos los paquetes actualizables
+- `sudo apt purge` Remover paquete con configuracion
+- `sudo apt autoremove` Remover paquetes innecesarios
+- `sudo apt search` Buscar un programa
+- `sudo apt show` Mostrar info de un paquete
+- `sudo apt list` Listar paquetes con criterio (installed, upgradable etc)
+- `sudo apt edit-sources` Editar sources list
+- `sudo apt full-upgrade` Upgrades packages with auto-handling of dependencies
 
-`sudo apt install` Instalar paquete  
-`sudo apt remove` Remover paquete  
+- `sudo add-apt-repository --remove ppa:PPA_Name/ppa` Remove a PPA
 
-`sudo apt update` Refrescar index del repositorio  
-`sudo apt upgrade` Actualizar todos los paquetes actualizables  
+## Scheduling Repeated Jobs with Cron
 
-`sudo apt purge` Remover paquete con configuracion  
-`sudo apt autoremove` Remover paquetes innecesarios  
-`sudo apt search` Buscar un programa  
-`sudo apt show` Mostrar info de un paquete  
-`sudo apt list` Listar paquetes con criterio (installed, upgradable etc)  
+### Crontab
+- `crontab FILE` Agrega un archivo a la tabla de cron jobs
+- `crontab -l` Listar todos los cron jobs
+- `crontab -e` Editar cron job
+- `crontab -r` Eliminar todos los cron jobs
 
-`sudo apt edit-sources` Editar sources list  
-`sudo apt full-upgrade` Upgrades packages with auto-handling of dependencies  
+#### Formato de un cron job
+`MIN HOR DIA MES SEM command`
+- MIN = 0-59
+- HOR = 0-23
+- DIA = 1-31
+- MES = 1-12
+- SEM = 0-6 (0=SUN)
 
-## Remove a PPA
-`sudo add-apt-repository --remove ppa:PPA_Name/ppa`
+- `0,30`
+- `*/2`
+- `0-4`
 
+#### Cron de Laravel:
+`* * * * * php path/artisan schedule:run >> /dev/null 2>&1`
+
+## Vim
+
+### Movimientos
+- `k` Subir
+- `j` Bajar
+- `h` Izquierda
+- `l` Derecha
+- `w` Derecha Palabar
+- `b` Izquierda Palabra
+- `^` Inicio linea
+- `$` Final Linea
+
+### Modes
+- `i` Insert cursor
+- `I` Insert Inicio
+- `a` Append cursor
+- `A` Append Inicio
+
+### Comandos
+- `:w` Guardar
+- `:w!` Forzar Guardar
+- `:wq!` Guardar y salir
+- `:x` = `:wq`
+
+## Bash Script
+- `#!/bin/bash` SheBang 
+- `chmod u+x FILE.sh` Darle permisos de ejecucion
+- `./FILE.sh` Ejecutar el programa
+
+### Ejemplo
+```bash
+#!/bin/bash
+echo "Hola Mundo"
+```
+### Variables
+```bash
+#!/bin/bash
+a="Hola"
+b="Mundo"
+echo $a $b
+```
+
+## Directorios
+- `Home` ~ Donde esta cada usuario
+- `bin` Binarios - Los comandos que se ejecutan en consola.
+- `sbin` Sudo Binarios - Comandos que solo el sudo puede ejecutar
+- `boot` Elementales para booter el sistema
+- `cdrom` CD montados - Legacy
+- `dev` Dispositovos
+- `etc` Etcetera - Configuraciones globales del sistema
+- `lib, lib32 lib64` Librerias - Para que las aplicaciones usen
+- `media` mnt Donde se montan los dispositivos. media automatico y mnt manual
+- `opt` Carpeta Opcional - Se instalan otras apps
+- `proc` Procesos - Dond se almacenan la info de los procesos
+- `root` Home folder del usuario root
+- `run` Directorio temporario
+- `snap` Directorio de apps snaps
+- `srv` Server - Donde los achivos del server se guardan
+- `sys` Sistema - Directorio temporario del sistema
+- `tmp` Temporario - Donde se almacena session temporaria
+- `usr` Donde las aplicaciones para el usuario se instalan
+- `var` Variable - Archivos que varian de tamano
