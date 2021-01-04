@@ -21,7 +21,7 @@
 
 ## Controllers
 - `/** @Route("/blog") */` Definir modulo del controller
-- `/** @Route("/{param}", name="") */` Definir ls url
+- `/** @Route("/{param}", name="") */` Definir la url
 - Todos los controllers son services
 - `class BlogController extends AbstractController` 
     - usa `ControllerTrait` que tiene todos los metodos utiles

@@ -10,5 +10,5 @@
 - [WSL2](./wsl.md)
 - [Socker](./docker.md)
 - [Python](./python.md)
-- [Symfony](./Symfony.md)
+- [Symfony](./symfony.md)
 - [React](./react.md)
