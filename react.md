@@ -77,6 +77,11 @@ export default class App extends Component {
 - Eventos: onClick, onScroll, onLoad, onSelect, onDoubleClick, onChange, onSubmit, etc.
   - Reciben una funcion `onClick={this.onShow.bind(this, var)}`. 
   - Para no tener que bindear, se puede asignar un arrow funcion `onShow = (var, event) => { }`
-
+- `React.createContext()` Permite usar el state compartido con los hijos
+  - `<Context.Provider value={this.state}>{this.props.children}<Context.Provider>` 
+  - Hace como un hook con los props para ejecutar metodos
+- `<input value={nombre} name="nombre" onChange={onChange}/>`
+  - `onChange = e => this.setState({ [e.target.name] : e.target.value })`
+- `<input defaultValue={nombre} ref={this.nombreInput} />`
 
 

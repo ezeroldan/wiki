@@ -20,6 +20,16 @@ sudo npm install -g typescript
 sudo npm install -g ts-node
 ```
 
+## Yarn
+```bash
+sudo npm install -g yarn
+```
+
+## React
+```bash
+sudo npm install -g create-react-app
+```
+
 ## Vue
 ```bash
 sudo npm install -g @vue/cli
