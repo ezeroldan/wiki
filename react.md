@@ -1,10 +1,5 @@
 # React
 
-## General
-- Jsx extiende js para facilitar escribir componentes
-- `<div className="App"></div>` Es traducido a `React.createElement('div', { className: 'App'})`
-- `const titulo = <h2>Hola</h2>;` Jsx se puede asignar a una variable
-
 ## Extensiones
 
 **Broser:**
@@ -21,6 +16,11 @@
 - `npm run build` Hacer el deploy, genera un carpeta build
 
 - `create-react-app NAME --template typescript` Generar una app con TypeScript
+
+## General
+- Jsx extiende js para facilitar escribir componentes
+- `<div className="App"></div>` Es traducido a `React.createElement('div', { className: 'App'})`
+- `const titulo = <h2>Hola</h2>;` Jsx se puede asignar a una variable
 
 ## Componentes
 - `state` Define la data interna del componente
@@ -82,6 +82,7 @@ export default class App extends Component {
   - Hace como un hook con los props para ejecutar metodos
 - `<input value={nombre} name="nombre" onChange={onChange}/>`
   - `onChange = e => this.setState({ [e.target.name] : e.target.value })`
-- `<input defaultValue={nombre} ref={this.nombreInput} />`
+- `<input defaultValue={nombre} ref={this.nombreInput} />` Referenciar y passar valor default
+  - `this.nombreInput = React.createRef();` 
 
 

@@ -108,6 +108,7 @@ sudo update-alternatives --config gdm3-theme.gresource
 - [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
 - [Transparent Top Bar](https://extensions.gnome.org/extension/1708/transparent-top-bar/)
 - [Unite](https://extensions.gnome.org/extension/1287/unite/)
+- [GTK Title Bar](https://extensions.gnome.org/extension/1732/gtk-title-bar/)
 
 ### Dock
 - [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)  
