@@ -62,7 +62,7 @@ sudo apt install –reinstall ttf-mscorefonts-installer
 [PhotoGIMP](https://github.com/Diolinux/PhotoGIMP)
 
 ## Drivers
-[Asus Q325UA](https://www.asus.com/supportonly/Q325UA/HelpDesk_Download/)  
+[Asus Q325UA](https://www.asus.com/supportonly/Q325UA/HelpDesk_Download/) 
 
 # Gnome
 
@@ -78,7 +78,7 @@ sudo update-alternatives --config gdm3-theme.gresource
 ```
 
 ## Themes
-- [Yaru-Colors](https://www.gnome-look.org/p/1299514/)  
+- [Yaru-Colors](https://www.gnome-look.org/p/1299514/) 
 - [Adwaita-Slim](https://github.com/archbyte/Adwaita-Slim)
 - [Newaita](https://www.gnome-look.org/p/1243493/)
 
@@ -92,6 +92,7 @@ sudo update-alternatives --config gdm3-theme.gresource
 - [Desktop Icons NG](https://extensions.gnome.org/extension/2087/desktop-icons-ng-ding/)
 - [Multi Monitors](https://extensions.gnome.org/extension/921/multi-monitors-add-on/)
 - [Animation Tweaks](https://extensions.gnome.org/extension/1680/animation-tweaks/)
+- [Always Zoom Workspaces](https://extensions.gnome.org/extension/503/always-zoom-workspaces/)
 
 ### Topbar
 - [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/appindicator-support/)
@@ -111,5 +112,5 @@ sudo update-alternatives --config gdm3-theme.gresource
 - [GTK Title Bar](https://extensions.gnome.org/extension/1732/gtk-title-bar/)
 
 ### Dock
-- [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)  
-- [Dash to Panel](https://extensions.gnome.org/extension/1160/dash-to-panel/)  
+- [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/) 
+- [Dash to Panel](https://extensions.gnome.org/extension/1160/dash-to-panel/) 

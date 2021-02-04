@@ -32,11 +32,20 @@
 - `symfony composer require doctrine-bundle` Doctrine ORM
 - `symfony composer require easyadmin-bundle` Admin para symfony
 - `symfony composer require security`
+- `symfony composer require asset` Para manejo de assets
+- `symfony composer require encore` Para manejo de webpack
+- `symfony composer require sec-checker --dev` Validador de seguridad
 
 ## Service Container
-- `symfony console debug:container` Ver los servicios cargados en el container  
-- `symfony console debug:autowiring` Ver asociaciones al del service container
-- Simpre usar la inyeccion de dependencia con la interfaces
+- `symfony console debug:container [<name>]` Ver los servicios cargados en el container
+- `symfony console debug:autowiring [<search>]` Ver asociaciones al del service container
+    - `search` filtro
+    
+## Config
+- `symfony console config:dump-reference [<name> [<path>]]` Ver ejemplo de archivo de config
+    - `name` Bundle o alias. EJ: FrameworkBundle
+    - `path` The configuration option path
+
 
 ## Controllers
 - `synfony consule make:controller` Generar un controlador y template
@@ -59,12 +68,18 @@
 - Los archivos se llaman `base.html.twig`
 - Pueden ser css, xml, json, csv
 - Se puede usar simple PHP para la vista tambien
+- En todas las vistas hay una varible `app`
 - `{% %}` Acciones
 - `{{ }}` Imprimir contenido
 - `{# #}` Comentarios
 - `/_error/404` Muestra la pantalla de error
 - `templates/bundles/TwigBundle/Exception/error404.html.twing` Generar pantalla de error
 - `{{ path('NAME') }}` Imprimir URL
+
+## Encore
+- `yarn run encore dev --watch` Compilar cambios a demanada
+- `yarn run encore dev-server` Ejecutar hot reload 
+
 
 ## Doctrine
 - En `.env` setear `DATABASE_URL=mysql://root:root@127.0.0.1:3306/symfony?serverVersion=5.7`
@@ -85,7 +100,7 @@
 - `symfony console make:form` Generar un formulario
 - `'form' => $form->createView()`
 - `{{ form(from) }}`
-
+ 
 ## FlashMesages
 - Se guardan en la session
 - `FlashBagInterface $bag`
@@ -97,6 +112,22 @@
 - `redis-cli GET [NAME]` Ver el contenido en el key [NAME]
 - `SessionInterface $session)` Obtner la session por DI
 - `$session->set('key', 'value');` Guardar un dato en la session
+
+## Test
+- `symfony console make:unit-test` Generar un Test
+- `vendor/bin/simple-phpunit` Ejecutar el los Test
+
+## phpStorm
+- Symfony Plugin
+- PHP Anotations
+- PHP Toolbox
+
+- PHP > Composer > Synchronize IDE Setting with composer.json
+- PHP > Symfony > Enable Plugin for this Project
+  - Translation: app/cache/dev/translation
+  - App: app
+  - Web: public
+
 
 ## Deploy
 - `symfony console cache:clear` Borrar la cache para produccion

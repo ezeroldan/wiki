@@ -3,7 +3,7 @@
 ## Instalacion
 
 ### Debian
-```BASH
+```bash
 sudo add-apt-repository ppa:ondrej/php
 sudo apt update -y
 
@@ -15,25 +15,25 @@ sudo apt install -y php-pear php5.6-curl php5.6-dev php5.6-gd php5.6-mbstring ph
 ```
 ### Fedora
 ```bash
-sudo dnf -y install php  php-cli php-fpm php-mysqlnd php-zip php-devel php-gd php-mcrypt php-mbstring php-curl php-xml php-pear php-bcmath php-json php-soap php-intl
+sudo dnf -y install php php-cli php-fpm php-mysqlnd php-zip php-devel php-gd php-mcrypt php-mbstring php-curl php-xml php-pear php-bcmath php-json php-soap php-intl
 ```
 
 ## Composer
 
-```BASH
+```bash
 curl -sS https://getcomposer.org/installer -o composer-setup.php
 sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 rm composer-setup.php
 ```
 
-```BASH
+```bash
 nano ~/.zshrc
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 ```
 
 ## Laravel
 
-```BASH
+```bash
 composer global require laravel/installer
 ```
 
@@ -42,11 +42,11 @@ composer global require laravel/installer
 ## Valet Linux
 
 ### Debian
-```BASH
+```bash
 sudo apt install -y network-manager libnss3-tools jq xsel
 ```
 ### Fedora
-```BASH
+```bash
 sudo dnf install nss-tools jq xsel
 sudo dnf install php-{cli,process,mbstring,mcrypt,xml}
 
@@ -56,47 +56,52 @@ sudo nano /etc/selinux/config
 `reboot`
 
 ### Instalacion
-```BASH
+```bash
 composer global require cpriego/valet-linux
 ```
 
 ### [Windows Subsystem for Linux 2 (WSL 2)](./wsl.md)
-```BASH
+```bash
 composer global require valeryan/valet-wsl
 ```
 
 ### Instalar
-```BASH
+```bash
 valet install
 ```
 
-```BASH
+```bash
 mkdir ~/htdocs && cd ~/htdocs
 valet park
 ```
 
-```BASH
+```bash
 sudo reboot
 sudo systemctl stop apache2
 sudo systemctl disable apache2
 ```
 
+### Desactivar del boot
+```bash
+sudo systemctl disable nginx.service
+```
+
 ## Xdebug  
 
 ### Debian
-```BASH
+```bash
 sudo apt install -y php-xdebug
 sudo nano /etc/php/7.4/mods-available/xdebug.ini
 ```
 `xdebug.show_error_trace = 1`
 
-```BASH
+```bash
 valet restart
 ```
 
 ### Fedora
 
-```BASH
+```bash
 sudo dnf install php-xdebug
 sudo nano /etc/php.d/15-xdebug.ini
 ```
@@ -114,7 +119,7 @@ xdebug.idekey=editor-xdebug
 
 ## NGINX Config
 
-```BASH
+```bash
 sudo nano /etc/nginx/nginx.conf
 valet restart
 ```
@@ -133,14 +138,14 @@ http{
 ## Configurar PHP
 
 ### Debian
-```BASH
+```bash
 locate php.ini
 sudo nano /etc/php/7.4/fpm/php.ini
 sudo nano /etc/php/5.6/fpm/php.ini
 ```
 
 ### Fedora
-```BASH
+```bash
 sudo nano /etc/php.ini
 ```
 

@@ -35,16 +35,15 @@ sudo usermod -aG docker $USER
 `docker login --username=USER` Loguearse con la cuenta de DockerHub
 
 ## Ejecutar Container
-- En linux docker se debe de ejecutar como root, se puede hacer usando `sudo docker` o logueando `sudo -i`
-- EL container es generado cada vez que se ejecuta el comando
-- `docker images` Listar imagenes en el sistema
-- `docker run repository[:tag=lastest] echo "hola mundo"` Genera un container con una imagen y ejecutar un comando dentro del container
-- `docker run -it repository` Ingresar dentro den container. `-i (--interactive)` Container interactivo `-t (--tty)` Pseudoterminal
-- `docker run -d repository` Ejecutar el container de fondo. `-d (--detach)` Retorna el ID
-- `docker run --rm repository` Elimina el container despues de ejecutarlo
-- `docker run --name NOMBRE repository` Nombre al container al ejecutarlo
-- `docker run -p host_port:container_port repository` Mapear el el puerto del container
-- `docker run --link name repository` Linkear con un container ejecutandose
+- `docker run parametros repository[:tag=lastest] comando"` Genera un container y ejecutar el comando
+  - `-it` Ingresar dentro den container. `-i (--interactive)` Container interactivo `-t (--tty)` Pseudoterminal
+  - `-d` Ejecutar el container de fondo. `-d (--detach)` Retorna el ID
+  - `--rm` Elimina el container despues de ejecutarlo
+  - `--name NOMBRE` Nombre al container al ejecutarlo
+  - `--link name` Linkear con un container ejecutandose
+  - `-w /home` Setear el working directory
+  - `-p host_port:container_port` Mapear el el puerto del container
+  - `-v valume_path:container_path` Indicar volumen para persistencia
 
 ## Monitorear Containers
 - `docker ps` Muestra los containers ejecutandose de fondo
@@ -56,6 +55,7 @@ sudo usermod -aG docker $USER
 - `docker history repository` Muestra la composicion de una imagen con sus subimagenes
 
 ## Generar Docker Image
+- `docker images` Listar imagenes en el sistema
 - Se puede hacer haciendo commits en un Docker Container
 - Generando un `Dockerfile`
 
@@ -91,16 +91,28 @@ RUN apt-get update && apt-get install -y \
 - `docker tag ID user/repository:tag` Asocia el tag a una imagen
 - `docker push user/repository:tag` Subir la imagen a DockerHub
 
-
 ## Networking
 - `docker network ls` Listar las opciones de network disponibles
 - `docker network create --driver bridge NOMBRE` Generar una nueva network con driver bridge
 - `docker network connect NETWORK_NAME container` Conectar un container a una red
 - `docker network disconnect NETWORK_NAME container` Desconectar de una red a un container
-- **None Network** No tiene acceso al intetnet y cada container esta aislado. `docker run --net none container`
+- **None Network** No tiene acceso al intetnet y cada container esta aislado. `--net none container`
 - **Bridge Network** La default. Conecta todos los containers a la network y la misma se conecta a internet
-- **Host Network** Se llaman open containers, ya que tiene acceso completo a la red del host, son inseguros. `docker run --net host container`
+- **Host Network** Open containers, tiene acceso completo a la red del host, son inseguros. `--net host container`
 - **Overlay Network** Para conectar a varios host. Mas usado en produccion
+
+## Volumes
+- `docker volume create NAME` Generar un volume
+
+## init.sh
+- Se ejcutar cuando se 
+- `COPY ./init.sh /opt/docker/provision/entrypoint.d/30-init.sh` 
+
+
+## Mantenimiento:
+- `docker stats` Ver estadisticas de consumo
+- `docker system prune` Liberar contenedores sin uso
+- `docker cp ARCHIVO ID:/PATH` Copiar datos a un container
 
 # Docker Compose
 - Para manejar cluster de containers
@@ -120,6 +132,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 - `depends_on:` Lista los container que van a ser usados como dependencias
 - `image:` Indicar que imagen usar para generar el container
 - `networks:` Lista las networks asociadas 
+- `{$EVN_VAR}` `{$EVN_VAR:default}` Usar variables env en yml
 
 **Ejemplo**
 ```yaml
@@ -137,7 +150,14 @@ services:
 
 ### Ejecucion y Monitoreo
 - `docker-compose up` Genera y ejecuta todos los containers
-- `docker-compose up -d` `-d` Ejecuta los containers en segundo plano
+  - `-d`, `--detach` Ejecuta los containers en segundo plano
+  - `--no-deps` No ejecutar contenedores linkeados
+  - `--no-build` No buildear imagenes
+  - `--build` Buildear imagenes
+  - `-t`, `--timeout TIMEOUT` Deter containers en segudos (default: 10s)
+  - `-V`, `--renew-anon-volumes` Regenerar volumenes anonimos
+  - `--remove-orphans` Eliminar containser huerfanos
+  - `--scale SERVICE=NUM` Escalar SERVICE a NUM instancias.
 
 - `docker-compose ps` Monitorear los procesos ejecutados
 - `docker-compose logs` Ver logs de los containers
@@ -162,6 +182,21 @@ base=https://github.com/docker/machine/releases/download/v0.16.0 &&
   chmod +x /usr/local/bin/docker-machine
 ```
 
-# Docker Swarm
+# Kubernetes
+- Es una herramienta para orquestacion de contenedores
 
+# Portainer
 
+```bash
+docker volume create portainer_data
+ 
+docker run -d \
+  -p 8000:8000 \
+  -p 9000:9000 \
+  --name=portainer \
+  --restart=always \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v portainer_data:/data portainer/portainer-ce
+```
+
+[Entrar al panel de Portainer](http://localhost:9000)
