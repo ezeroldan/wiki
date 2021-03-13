@@ -29,6 +29,7 @@ git config --global color.ui auto
 - `git show [COMMIT]` Mostrar informacion sobre un commit
 - `git show [FILE]` Mostrar informacion sobre un archivo
 - `git log` Mostrar el historial de cambios
+- `git reflow`
 
 ### Cambios
 - `git add [./FILE]` Pasar los archivos a estado stages para commit
@@ -42,6 +43,10 @@ git config --global color.ui auto
 - `git clean -f -d` Los untracked son eliminados junto con los directorios
 - `git rm [file]` Borra los archivos del working directory y stages los cambios
 - `git stash` Muevo todo los archivos del working directory al stash
+- `git rebase -i HEAD~1` Editar commits
+    - 
+- `git cherry-pick` Traer un commit 
+    
 
 ### Branching
 - `git branch` Listar las branchs locales

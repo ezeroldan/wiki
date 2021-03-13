@@ -10,12 +10,13 @@
 - ES7 React/Redux: rcc
 
 ## Generar App
-- `sudo npm install -g create-react-app` Instalar generador de apps
-- `create-react-app NAME` Generar una app
+- `npx create-react-app my-app` Generar una app
 - `npm start` Ejecutar la app
 - `npm run build` Hacer el deploy, genera un carpeta build
 
 - `create-react-app NAME --template typescript` Generar una app con TypeScript
+
+- `npm install node-sass --save` usar sass
 
 ## General
 - Jsx extiende js para facilitar escribir componentes
@@ -62,10 +63,10 @@ export default class App extends Component {
 }
 ```
 
-### Jsx
+## Jsx
 - `{variable}` Interpolacion, imprimir contenido
 - `{variable ? <h1>true</h1> : <h1>false</h1>}` Condicional corto
-- `style={{ name: value}}` Inline style, tambien se pueden pasar mediante variables
+- `style={{ name: value }}` Inline style, tambien se pueden pasar mediante variables
 - `{/* a comment */}` Comentario
 - `{' '}` Esto representa un espacio. `{' '}Palabra` Esto representa un enter
 - `{'\u00A9 2017'}` Para poner entities usar las de js
@@ -84,6 +85,11 @@ export default class App extends Component {
   - `onChange = e => this.setState({ [e.target.name] : e.target.value })`
 - `<input defaultValue={nombre} ref={this.nombreInput} />` Referenciar y passar valor default
   - `this.nombreInput = React.createRef();` 
+  
+
+# React Native
+
+
 
 
 
