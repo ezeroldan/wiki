@@ -1,16 +1,25 @@
 # Docker
 
-## Container-based Virtualization
-- El container Engine, se instala sobre el sistema operativo
-- Los containers comparten el sistema operativo
-- kitematic es un cliente de docker
-- Las images son templates para crear containers, estan compuestas de capas de otras images. Se guardan en repositorios como DockerHub.
-- Los containers son instancias de las images
-- Las imagenes estan compuestas de capas de imagenes de lectura
-- Cuando se genera un container se agrega una capa de escritura, cuando se borrar el container, se borrar esta capa tambien.
-- Continuos Integration es una practica de trabajo, para distribuir el codigo despues de pasar las pruebas
-
 ## Instalar
+
+**Ubuntu**
+```bash 
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release -y
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo \
+  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  
+ sudo apt-get update
+ sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+```
 
 **Fedora**
 ```bash 
