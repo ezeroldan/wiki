@@ -124,7 +124,6 @@ RUN apt-get update && apt-get install -y \
 - `docker cp ARCHIVO ID:/PATH` Copiar datos a un container
 
 # Docker Compose
-- Para manejar cluster de containers
 
 ## Instalar
 ```bash 
