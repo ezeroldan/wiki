@@ -22,7 +22,7 @@ sudo apt install -y spotify-client
 sudo apt install -y thunderbird
 sudo apt install -y thunderbird-locale-es-ar
 sudo apt install -y inkscape
-sudo apt install -y gnome-sushi
+sudo apt install -y openvpn network-manager-openvpn network-manager-openvpn-gnome
 ```
 
 ## Fedora
