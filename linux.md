@@ -13,8 +13,6 @@ sudo apt install -y tree
 sudo apt install -y zip unzip
 sudo apt install -y mlocate
 sudo apt install -y neofetch
-sudo apt install -y cmatrix
-sudo apt install -y openvpn
 
 sudo apt install -y vlc
 sudo apt install -y filezilla
