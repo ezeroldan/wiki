@@ -1,13 +1,97 @@
-# Linux
+# Bash Scripting
 
-- `|` Pasa el resultado de un comando a otro
+## Script
 
-## Environment Variables
+```bash
+#!/bin/env bash
+echo "Hola"
+exit 0
+```
+
+- `chmod +x ./file.sh` Darle permisos de ejecucion
+- `./file.sh` Ejecutarlo
+
+## Variables
+
+### Environment Variables
 - `echo $VAR_NAME` Ver contenido de una variable del sistema
 - `printenv` Listar las variables del sistema
 - `printenv HOME` Listar contenido de una variable
 - `export VAR="value"` Generar una variable del sistema
 - `unset VAR` Remover una variable
+
+#### Shell Variables
+- `$PATH` Lista los directorios donde buscar los comandos executables
+- `$HOME` Path absoluto del directorio del usuario actual
+- `$USER` Nombre del usuario actual
+- `$HOSTNAME` Nombre de la computadora
+- `$HOSTTYPE` Tipo de computadora
+- `$PS1` Prompt de la terminal
+- `$PWD` Path del directorio actual
+- `$OLDPWD` Imprimir directorio anterior
+- `$IFS` Internal Field Separator (space,tab, newline)
+
+### Parameter Expansion
+- `${USER,}` Lowercase primera letra (lcfirst)
+- `${USER,,}` Lowercase todo (strtolower)
+- `${USER^}` Uppercase primera letra (ucfirst)
+- `${USER^^}` Uppercase todo (strtoupper)
+- `${#USER}` Total de caracteres (strlen)
+- `${USER:start:length}` Devuelve parte de un texto (substr)
+
+## Command Substitution
+- `result=$(command)` Obtener el resultado de un comando
+
+## Arithmetic Expansion
+- `$(( a + b))` Suma
+- `$(( a - b))` Resta
+- `$(( a * b))` Multiplicacion
+- `$(( a / b))` Division
+- `$(( (a + b) * c))` Orden de operaciones
+- `$(( a ** b ))` Potencia 
+- `$(( a % b ))` Obtener resto de una division
+- `"scale=2; 5/2" | bc` Ejecutar operaciones con decimales
+
+## Tilde Expansion
+- `~` = `$HOME` Path del usuario actual
+- `~root` Muestra path del usuario. EJ root
+- `~-` = `$OLDPWD` Directorio anterior
+
+## Brace Expansion
+- `{a,b,c,d}` Remplaza la coma por un espacio
+- `{1..9}` Geneara un lista del rango con un espacio
+- `{a..z}` Lo mismo con letras
+- `texto{1..2}` Genera texto1 texto2
+- `texto{01..02}` Genera texto01 texto02
+
+## Control Operators
+- `|`
+- `||`
+- `&` Ejecutar en el backgroud
+- `&&`
+- `;`
+- `;;`
+- `;&`
+- `;;&`
+- `|&`
+- `()`
+- `newline`
+
+## Input Output and Redirection
+- `0` Standard Input  stdin
+- `1` Standard Output stdout
+- `2` Standard Error  stderr
+
+### Redirection Operatos
+- `|` Pasa el resultado de un comando a otro
+- `>` Redirecciona el output a un archivo (Truncate)
+- `>>` Concatena el output a un archivo
+- `<` Envia el contenido de un archivo a un comando
+- `&` Redirecciona a otro file descriptor
+- `&>` Suma el stdout y stderr
+- `2>&1` Combinar el stderr con el stdout
+- `2>file` Enviar errores (stderr) a un archivo
+- `>/dev/null` Redirecciona el output a la nada
 
 ## Buscar comandos
 - `wich cat` Buscar ubicacion de un comando
@@ -15,33 +99,59 @@
 - `type` Get information on a command
 - `whereis` Find the executable location, source, and manual
 
-## Input Output and Redirection
-- `0` Standard Input  stdin
-- `1` Standard Output stdout
-- `2` Standard Error  stderr
+## Requesting Input
 
-### Redirection
-- `>` Redirecciona el output a un archivo (Truncate)
-- `>>` Concatena el output a un archivo
-- `<` Envia el contenido de un archivo a un comando
-- `&` Redirecciona a otro file descriptor
-- `2>&1` Combinar el stderr con el stdout
-- `2>file` Enviar errores (stderr) a un archivo
-- `>/dev/null` Redirecciona el output a la nada
+### Positional Parameters
+- `command $1 $2 $3` Valores ingresados por orden
+- `${var:-default}` Usar valor defecto
+- `$#` Count del total de parametros ingresados
+- `$0` Indica el nombre del script
+- `$@` Retorna todos los parametros ingresados (`"$@"`)
+- `$*` Retorna todos los parmetros con IFS incluido
+- `$?` Retorna el codigo de exit del command anterior
 
-## Navegar en archivos
+### Read command
+- `read` Guarda lo ingresado en `$REPLY`
+- `read var1 var2` Setea lo ingresado en `var1` y `var2`
+- `read -p "Comentario" var` Promt, mostra una mensaje.
+- `read -t 5` Timeout para esperar respuesta, en segundos.
+- `read -s` Secret, no muestra al tipear, poner `echo` despues para dar enter
+- `read -N 4` Limite de cantidad exacta de caracteres
+- `read -n 4` Limite de cantidad maxima de caracteres
+
+### Select command
+```bash
+PS3="Pregunta"
+select var in options; do
+  echo $var
+  break
+done
+```
+- Por defecto `RESPONSE` sera la variable con la respuesta
+- `break` Rompe el loop de select
+- `PS3` Tiene el mensaje de la pregunta
+
+## Archivos & Directorios
+
+### Globbing
+- `*` Cualquier cosa
+- `?` Un caracter
+- `[]` Cualquier caracter contenido
+- `[0-9]` De 0 a 9
+- `[a-z]` De a a Z
+
+### Navegar en archivos
 - `ls` Listar archivos y carpetas
 - `cd` Change directory - Navegar entre directorios
 - `pwd` Imprimir directorio actual
-- `echo $OLDPWD` Imprimir directorio anterior
 - `mkdir` Crear un directorio
 - `mkdir -p dir1/dir2/dir3` Generar directorios en cascada
 - `rmdir` Remove directory (only works if empty)
 
-## Symbolic Links
+### Symbolic Links
 - `ln -s ABS_PATH NAME` Generar el link simbolico
 
-## Commands for Working with Files
+### Commands for Working with Files
 - `touch` Creates a file or updates the timestamp on an existing file
 - `cat` Outputs the full contents of a file
 - `head` Returns the first X lines of a file starting at the top
@@ -57,13 +167,13 @@
 - `colordiff` Compare the two files and observe the difference
 - `sed 's/PATTERN/TEXT/'` Sustitucion de texto
 
-## Finding Files and Directories
+### Finding Files and Directories
 - `find DIRECTORIO -iname NOMBRE` Buscar por nombre
 - `find DIRECTORIO -type(d f l) NOMBRE` Buscar por tipo de archivo y nombre
 - `file ARCHIVO` Indica el tipo de un archivo
 - `locate NAME` Buscar usan el index de archivos
 
-## Searching in Files
+### Searching in Files
 - `grep -[i c n v r w e] PATTERNS [FILE]` Busca dentro de un archivo (global regular expression print)
   - `-i` Busqueda caseinsesitive
   - `-c` Total de macheos
@@ -84,7 +194,7 @@
 - `more` Paginador simple
 - `less` Paginador mas complejo
 
-## Permisos
+### Permisos
 - `groups USER` `id -Gn` Ver los grupos de un usuario
 - `chmod [u g o a] [+- wrx] [file/folder]` Los permisos tambien son llamados modos
   - Entidad
@@ -103,19 +213,22 @@
 - `chgrp [OPTION] GROUP FILE` Cambia el grupo de un archivo
 - `umask [-S] [mode]` 
 
+### Compresion
+
+#### .tar
+- `tar cf ....tar` Generar archivo .tar
+- `tar xf ....tar` Extraer archivo
+- `tar tf ....tar` Mostrar contenido del archivo
+
+#### .zip
+- `gzip ...` Generar gzip de un archivo
+- `gzip -d ....gz` Extraer archivo
+
 ## Switching Users and Running Commands as Others
 - `su [username=root]` Loguearte como otro usuario manteniendo las variables del sistema
 - `su - [username=root]` Loguearte a la cuenta del usuario 
 - `sudo -i` Loguearte como usuario root
 - `whoami` Muestra el usuario que estoy usando
-
-## Compresion
-- `tar cf ....tar` Generar archivo .tar
-- `tar xf ....tar` Extraer archivo
-- `tar tf ....tar` Mostrar contenido del archivo
-  
-- `gzip ...` Generar gzip de un archivo
-- `gzip -d ....gz` Extraer archivo
 
 ## SSH
 - `ssh user@host` Conectar al host
@@ -252,24 +365,7 @@
 - `:w!` Forzar Guardar
 - `:wq!` Guardar y salir
 - `:x` = `:wq`
-
-## Bash Script
-- `#!/bin/bash` SheBang 
-- `chmod u+x FILE.sh` Darle permisos de ejecucion
-- `./FILE.sh` Ejecutar el programa
-
-### Ejemplo
-```bash
-#!/bin/bash
-echo "Hola Mundo"
-```
-### Variables
-```bash
-#!/bin/bash
-a="Hola"
-b="Mundo"
-echo $a $b
-```
+- `/` Buscar
 
 ## Directorios
 - `Home` ~ Donde esta cada usuario

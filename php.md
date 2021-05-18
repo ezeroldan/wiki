@@ -6,16 +6,91 @@
 ```bash
 sudo add-apt-repository ppa:ondrej/php
 sudo apt update -y
-
-sudo apt install -y php7.4
-sudo apt install -y php-pear php7.4-curl php7.4-dev php7.4-gd php7.4-mbstring php7.4-zip php7.4-mysql php7.4-xml php7.4-sqlite3 php7.4-mysql php7.4-pgsql php7.4-soap php7.4-intl 
-
-sudo apt install -y php5.6
-sudo apt install -y php-pear php5.6-curl php5.6-dev php5.6-gd php5.6-mbstring php5.6-zip php5.6-mysql php5.6-xml php5.6-sqlite3 php5.6-mysql php5.6-pgsql php5.6-soap
 ```
+
+#### PHP 7.4
+```bash
+sudo apt install -y php7.4
+sudo apt install -y \
+    php-pear \
+    php7.4-curl \
+    php7.4-dev \
+    php7.4-gd \
+    php7.4-mbstring \
+    php7.4-zip \
+    php7.4-mysql \
+    php7.4-xml \
+    php7.4-sqlite3 \
+    php7.4-mysql \
+    php7.4-pgsql \
+    php7.4-soap \
+    php7.4-intl \
+    php-xdebug
+```
+
+#### PHP 7.2
+```bash
+sudo apt install -y php7.2
+sudo apt install -y \
+    php-pear \
+    php7.2-curl \
+    php7.2-dev \
+    php7.2-gd \
+    php7.2-mbstring \
+    php7.2-zip \
+    php7.2-mysql \
+    php7.2-xml \
+    php7.2-sqlite3 
+    php7.2-mysql \
+    php7.2-pgsql \
+    php7.2-soap \
+    php7.2-intl \
+    php-xdebug
+```
+
+#### PHP 5.6
+```bash
+sudo apt install -y php5.6
+sudo apt install -y \
+    php-pear \
+    php5.6-curl \
+    php5.6-dev \
+    php5.6-gd \
+    php5.6-mbstring \
+    php5.6-zip \
+    php5.6-mysql \
+    php5.6-xml \
+    php5.6-sqlite3 \
+    php5.6-mysql \
+    php5.6-pgsql \
+    php5.6-soap
+```
+
 ### Fedora
 ```bash
-sudo dnf -y install php php-cli php-fpm php-mysqlnd php-zip php-devel php-gd php-mcrypt php-mbstring php-curl php-xml php-pear php-bcmath php-json php-soap php-intl
+sudo dnf -y install \
+    php \
+    php-cli \
+    php-fpm \
+    php-mysqlnd \
+    php-zip \
+    php-devel \
+    php-gd \
+    php-mcrypt \
+    php-mbstring \
+    php-curl \
+    php-xml \
+    php-pear \
+    php-bcmath \
+    php-json \
+    php-soap \
+    php-intl
+```
+
+## Cambiar de Version
+```bash
+sudo update-alternatives --set php /usr/bin/php7.4
+sudo update-alternatives --set php /usr/bin/php7.2
 ```
 
 ## Composer
@@ -27,83 +102,65 @@ rm composer-setup.php
 ```
 
 ```bash
-nano ~/.zshrc
+vim ~/.zshrc
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 ```
 
-## Laravel
-
+## Desactivar apache
 ```bash
-composer global require laravel/installer
-```
-
-## Valet
-
-## Valet Linux
-
-### Debian
-```bash
-sudo apt install -y network-manager libnss3-tools jq xsel
-```
-### Fedora
-```bash
-sudo dnf install nss-tools jq xsel
-sudo dnf install php-{cli,process,mbstring,mcrypt,xml}
-
-sudo nano /etc/selinux/config
-```
-`SELINUX=enforcing` => `SELINUX=permissive`
-`reboot`
-
-### Instalacion
-```bash
-composer global require cpriego/valet-linux
-```
-
-### [Windows Subsystem for Linux 2 (WSL 2)](./wsl.md)
-```bash
-composer global require valeryan/valet-wsl
-```
-
-### Instalar
-```bash
-valet install
-```
-
-```bash
-mkdir ~/htdocs && cd ~/htdocs
-valet park
-```
-
-```bash
-sudo reboot
 sudo systemctl stop apache2
 sudo systemctl disable apache2
 ```
 
-### Desactivar del boot
+## Configurar PHP
+
+### Debian
 ```bash
-sudo systemctl disable nginx.service
+locate php.ini
+sudo vim /etc/php/7.4/fpm/php.ini
+sudo vim /etc/php/7.4/cli/php.ini
+
+sudo vim /etc/php/7.2/fpm/php.ini
+sudo vim /etc/php/7.2/cli/php.ini
+
+sudo vim /etc/php/5.6/fpm/php.ini
+sudo vim /etc/php/5.6/cli/php.ini
+
 ```
 
-## Xdebug  
+### Fedora
+```bash
+sudo vim /etc/php.ini
+```
+
+### Configuracion
+```INI
+memory_limit = 512M
+post_max_size = 15M
+short_open_tag = On
+display_errors = On
+max_input_time = 900
+allow_url_fopen = On
+max_file_uploads = 20
+max_execution_time = 900
+upload_max_filesize = 15M
+```
+
+## Xdebug
 
 ### Debian
 ```bash
 sudo apt install -y php-xdebug
-sudo nano /etc/php/7.4/mods-available/xdebug.ini
+sudo phpenmod -v 7.4 xdebug
+sudo phpenmod -v 7.2 xdebug
 ```
 `xdebug.show_error_trace = 1`
-
-```bash
-valet restart
-```
 
 ### Fedora
 
 ```bash
 sudo dnf install php-xdebug
-sudo nano /etc/php.d/15-xdebug.ini
+sudo vim /etc/php.d/15-xdebug.ini
 ```
 
 ```ini
@@ -117,65 +174,39 @@ xdebug.remote_connect_back=on
 xdebug.idekey=editor-xdebug
 ```
 
-## NGINX Config
+## Usage
+`php [options] [-f] <file> [--] [args...]`
 
+- `-a`               Run interactively
+- `-c <path>|<file>` Look for php.ini file in this directory
+- `-n`               No configuration (ini) files will be used
+- `-d foo[=bar]`     Define INI entry foo with value 'bar'
+- `-e`               Generate extended information for debugger/profiler
+- `-f <file>`        Parse and execute `<file>`.
+- `-h`               This help
+- `-i`               PHP information
+- `-l`               Syntax check only (lint)
+- `-m`               Show compiled in modules
+- `-r <code>`        Run PHP `<code>` without using script tags <?..?>
+- `-B <begin_code>`  Run PHP `<begin_code>` before processing input lines
+- `-R <code>`        Run PHP `<code>` for every input line
+- `-F <file>`        Parse and execute `<file>` for every input line
+- `-E <end_code>`    Run PHP `<end_code>` after processing all input lines
+- `-H`               Hide any passed arguments from external tools.
+- `-S <addr>:<port>` Run with built-in web server.
+- `-t <docroot>`     Specify document root `<docroot>` for built-in web server.
+- `-s`               Output HTML syntax highlighted source.
+- `-v`               Version number
+- `-w`               Output source with stripped comments and whitespace.
+- `-z <file>`        Load Zend extension `<file>`.
+- `--ini`            Show configuration file names
+- `--rf <name>`      Show information about function `<name>`.
+- `--rc <name>`      Show information about class `<name>`.
+- `--re <name>`      Show information about extension `<name>`.
+- `--rz <name>`      Show information about Zend extension `<name>`.
+- `--ri <name>`      Show configuration for extension `<name>`.
+
+### Local Server
 ```bash
-sudo nano /etc/nginx/nginx.conf
-valet restart
-```
-
-```
-http{
-    client_header_timeout 3000;
-    client_body_timeout 3000;
-    client_max_body_size 100M;
-    fastcgi_read_timeout 3000;
-    fastcgi_buffers 8 512k;
-    fastcgi_buffer_size 512k;
-}
-```
-
-## Configurar PHP
-
-### Debian
-```bash
-locate php.ini
-sudo nano /etc/php/7.4/fpm/php.ini
-sudo nano /etc/php/5.6/fpm/php.ini
-```
-
-### Fedora
-```bash
-sudo nano /etc/php.ini
-```
-
-### Configuracion
-```INI
-
-[PHP]
-
-short_open_tag = On
-
-max_execution_time = 900
-
-max_input_time = 900
-
-memory_limit = 512M
-
-error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT
-
-display_errors = On
-
-post_max_size = 15M
-
-upload_max_filesize = 15M
-
-max_file_uploads = 20
-
-allow_url_fopen = On
-```
-
-## Compilar con Composer con PHP 5.6
-```bash
-php5.6 /usr/local/bin/composer install --no-dev --optimize-autoloader
+php -S localhost:8080
 ```

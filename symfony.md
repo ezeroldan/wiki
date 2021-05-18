@@ -8,9 +8,10 @@
 - `symfony new NOMBRE` Microservice, console application or API -> symfony/skeleton
 - `symfony new --full NOMBRE` Traditional web application -> symfony/website-skeleton
 - `symfony new NOMBRE --version=5.0` Indicar una version
+- `symfony new NOMBRE --version=4.4 --full` Indicar una version
 
 **Local Dev**
-```
+```bash
 symfony console make:docker:database
 docker-compose up -d
 symfony console doctrine:migrations:migrate
