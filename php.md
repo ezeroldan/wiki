@@ -153,8 +153,21 @@ upload_max_filesize = 15M
 sudo apt install -y php-xdebug
 sudo phpenmod -v 7.4 xdebug
 sudo phpenmod -v 7.2 xdebug
+
+sudo vim /etc/php/7.2/mods-available/xdebug.ini
 ```
-`xdebug.show_error_trace = 1`
+
+```ini
+zend_extension="/usr/lib/php/20190902/xdebug.so"
+xdebug.remote_log="/tmp/xdebug.log"
+xdebug.profiler_enable = 1
+xdebug.remote_enable=on
+xdebug.remote_port=9000
+xdebug.remote_autostart=0
+xdebug.remote_connect_back=on
+xdebug.idekey=editor-xdebug
+xdebug.show_error_trace = 1
+```
 
 ### Fedora
 

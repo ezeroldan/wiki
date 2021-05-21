@@ -1,9 +1,8 @@
 # Bash Scripting
 
 ## Script
-
 ```bash
-#!/bin/env bash
+#!/bin/bash
 echo "Hola"
 exit 0
 ```
@@ -32,11 +31,11 @@ exit 0
 - `$IFS` Internal Field Separator (space,tab, newline)
 
 ### Parameter Expansion
-- `${USER,}` Lowercase primera letra (lcfirst)
+- `${USER,}`  Lowercase primera letra (lcfirst)
 - `${USER,,}` Lowercase todo (strtolower)
-- `${USER^}` Uppercase primera letra (ucfirst)
+- `${USER^}`  Uppercase primera letra (ucfirst)
 - `${USER^^}` Uppercase todo (strtoupper)
-- `${#USER}` Total de caracteres (strlen)
+- `${#USER}`  Total de caracteres (strlen)
 - `${USER:start:length}` Devuelve parte de un texto (substr)
 
 ## Command Substitution
@@ -65,17 +64,24 @@ exit 0
 - `texto{01..02}` Genera texto01 texto02
 
 ## Control Operators
-- `|`
-- `||`
-- `&` Ejecutar en el backgroud
-- `&&`
-- `;`
+- `;`  Ejecuta varios comandos, si uno falla el otro se ejecuta igual
+- `|`  
+- `||` Ejecuta varios comandos, si el primero falla el segundo se ejecutara
+- `&`  Ejecutar comando en el background
+- `&&` Ejecuta varios comandos, si el primero es OK el segundo se ejecutara
 - `;;`
 - `;&`
 - `;;&`
 - `|&`
 - `()`
 - `newline`
+
+## Globbing
+- `*` Cualquier cosa
+- `?` Un caracter
+- `[]` Cualquier caracter contenido
+- `[0-9]` De 0 a 9
+- `[a-z]` De a a Z
 
 ## Input Output and Redirection
 - `0` Standard Input  stdin
@@ -131,14 +137,133 @@ done
 - `break` Rompe el loop de select
 - `PS3` Tiene el mensaje de la pregunta
 
-## Archivos & Directorios
+### getopts (--option -o)
+- `getopts "a:b:" opt` Recupera las opcines
+- `command -a value`
+- `$OPTARG` Tendra el valor ingresadp
 
-### Globbing
-- `*` Cualquier cosa
-- `?` Un caracter
-- `[]` Cualquier caracter contenido
-- `[0-9]` De 0 a 9
-- `[a-z]` De a a Z
+```bash
+while getopts "a:b:" opt; do
+  case "$opt" in
+     a) ;;
+     b) ;;
+    \?) ;;
+done
+```
+
+
+## Test command
+- `test -options arguments` Evalue el exit status `$?`
+- `[ value -option arguments ]` Se puede usar con []
+- `exit 0` = true
+- `exit 1` = false
+
+### Internal Shell Conditions
+- `[ -o opt ]` Option opt for set -o is on.
+- `[ -R var ]` Variable var has been assigned a value and is a nameref.
+- `[ -v var ]` Variable var has been assigned a value. var may name an array element.
+
+### Integer Comparisons
+- `[ n1 -eq n2 ]` n1 == n2 (Equal)
+- `[ n1 -ne n2 ]` n1 != n2 (Not Equal)
+- `[ n1 -gt n2 ]` n1 >  n2 (Greater)
+- `[ n1 -ge n2 ]` n1 >= n2 (Greater or Equal)
+- `[ n1 -lt n2 ]` n1 <  n2 (Less)
+- `[ n1 -le n2 ]` n1 <= n2 (Less or Equal)
+
+### String Conditions
+- `[ s1 ]`         s1 is not null
+- `[ -n s1 ]`      s1 has nonzero length
+- `[ -z s1 ]`      s1 has zero length
+- `[ s1 = s2 ]`    s1 identical s2
+- `[ s1 == s2 ]`   s1 identical s2
+- `[ s1 != s2 ]`   s1 not identical s2
+- `[ s1 < s2 ]`    s1 precedes that of s2
+- `[ s1 > s2 ]`    s1 follows that of s2
+- `[[ s1 =~ s2 ]]` s1 matches regex s2
+
+### File Conditions
+- `[ -e f1 ]`     Exists
+- `[ -a f1 ]`     Exists (Deprecated use -e)
+- `[ -b f1 ]`     Exists and is a block special file
+- `[ -c f1 ]`     Exists and is a character special file
+- `[ -d f1 ]`     Exists and is a directory
+- `[ -f f1 ]`     Exists and is a regular file
+- `[ -g f1 ]`     Exists and its set-group-id bit is set
+- `[ -G f1 ]`     Exists and its group is the effective group ID
+- `[ -k f1 ]`     Exists and its sticky bit is set
+- `[ -h f1 ]`     Exists and is a symbolic link. (Same as -L)
+- `[ -L f1 ]`     Exists and is a symbolic link. (Same as -h)
+- `[ -N f1 ]`     Exists and was modified after it was last read
+- `[ -O f1 ]`     Exists and its owner is the effective user ID
+- `[ -p f1 ]`     Exists and is a named pipe (FIFO)
+- `[ -r f1 ]`     Exists and is readable
+- `[ -s f1 ]`     Exists and has a size greater than zero
+- `[ -S f1 ]`     Exists and is a socket
+- `[ -u f1 ]`     Exists and its set-user-id bit is set
+- `[ -w f1 ]`     Exists and is writable
+- `[ -x f1 ]`     Exists and is executable
+- `[ f1 -ef f2 ]` f1 and f2 are linked (same file)
+- `[ f1 -nt f2 ]` f1 is newer than f2
+- `[ f1 -ot f2 ]` f1 is older than f2
+
+## Compound commands
+
+### if
+- Valida el $? de un comando es 0
+- `then` es el consecuant comand
+
+```bash
+if commad1 ; then # $? = 0
+elif commad2 ; then # $? = 0
+else # $? = 1
+fi
+```
+### Array
+- `numbers=(1 2 3 4)` Indexed array
+- `${numbers[2]}` Muestra 3
+- `${numbers[@]}` Obtener todos los elementos
+- `${numbers[@]:1:2}` Imprime 2 3
+- `numbers+=(5)` Agregar un item al array
+- `unset numbers[2]` Eliminar item, no actuliza los key
+- `${!numbers[@]}` Obtener los keys
+- `${numbers[@]@Q}` Mostrar con catacteres ocultos
+- `numbers[0]=1` Cambiar data por key
+- `readaray -t nombre < file.txt` Genera array por cada linea
+- `readaray -t nombre < <(ls ~)` Generar con process sustitution
+
+### for loops
+```bash
+itmes=(1 2 3 4)
+for item in "${itmes[@]}"; do
+  echo $item
+done
+```
+
+### Case
+- Es recomendable poner la variable entre comillas
+- Para evaluar cada caso se usa Globbing
+
+```bash
+variable=1
+case "$variable" in
+       [0-9]) echo "Caso 1";;
+  [0-9][0-9]) echo "Caso 2";;
+           *) echo "Caso default";;
+esac
+```
+
+### While loop
+- Repite el loop mientras la condicion retorne un exit 0 = true
+
+```bash
+mum=9
+while [ $mum -gt 10 ]; do
+  echo $mum
+done
+```
+
+## Archivos & Directorios
 
 ### Navegar en archivos
 - `ls` Listar archivos y carpetas
@@ -147,6 +272,28 @@ done
 - `mkdir` Crear un directorio
 - `mkdir -p dir1/dir2/dir3` Generar directorios en cascada
 - `rmdir` Remove directory (only works if empty)
+
+#### Directorios
+- `Home` ~ Donde esta cada usuario
+- `bin` Binarios - Los comandos que se ejecutan en consola.
+- `sbin` Sudo Binarios - Comandos que solo el sudo puede ejecutar
+- `boot` Elementales para booter el sistema
+- `cdrom` CD montados - Legacy
+- `dev` Dispositovos
+- `etc` Etcetera - Configuraciones globales del sistema
+- `lib, lib32 lib64` Librerias - Para que las aplicaciones usen
+- `media` mnt Donde se montan los dispositivos. media automatico y mnt manual
+- `opt` Carpeta Opcional - Se instalan otras apps
+- `proc` Procesos - Dond se almacenan la info de los procesos
+- `root` Home folder del usuario root
+- `run` Directorio temporario
+- `snap` Directorio de apps snaps
+- `srv` Server - Donde los achivos del server se guardan
+- `sys` Sistema - Directorio temporario del sistema
+- `tmp` Temporario - Donde se almacena session temporaria
+- `usr` Donde las aplicaciones para el usuario se instalan
+- `var` Variable - Archivos que varian de tamano
+
 
 ### Symbolic Links
 - `ln -s ABS_PATH NAME` Generar el link simbolico
@@ -304,21 +451,6 @@ done
 - `alias` Listar todas los alias
 - `echo "alias name='value'" >> ~/.zshrc` Agregar Alias al archivo de configuracion
 
-## Package Manager
-- `sudo apt install` Instalar paquete
-- `sudo apt remove` Remover paquete
-- `sudo apt update` Refrescar index del repositorio
-- `sudo apt upgrade` Actualizar todos los paquetes actualizables
-- `sudo apt purge` Remover paquete con configuracion
-- `sudo apt autoremove` Remover paquetes innecesarios
-- `sudo apt search` Buscar un programa
-- `sudo apt show` Mostrar info de un paquete
-- `sudo apt list` Listar paquetes con criterio (installed, upgradable etc)
-- `sudo apt edit-sources` Editar sources list
-- `sudo apt full-upgrade` Upgrades packages with auto-handling of dependencies
-
-- `sudo add-apt-repository --remove ppa:PPA_Name/ppa` Remove a PPA
-
 ## Scheduling Repeated Jobs with Cron
 
 ### Crontab
@@ -342,48 +474,8 @@ done
 #### Cron de Laravel:
 `* * * * * php path/artisan schedule:run >> /dev/null 2>&1`
 
-## Vim
 
-### Movimientos
-- `k` Subir
-- `j` Bajar
-- `h` Izquierda
-- `l` Derecha
-- `w` Derecha Palabar
-- `b` Izquierda Palabra
-- `^` Inicio linea
-- `$` Final Linea
-
-### Modes
-- `i` Insert cursor
-- `I` Insert Inicio
-- `a` Append cursor
-- `A` Append Inicio
-
-### Comandos
-- `:w` Guardar
-- `:w!` Forzar Guardar
-- `:wq!` Guardar y salir
-- `:x` = `:wq`
-- `/` Buscar
-
-## Directorios
-- `Home` ~ Donde esta cada usuario
-- `bin` Binarios - Los comandos que se ejecutan en consola.
-- `sbin` Sudo Binarios - Comandos que solo el sudo puede ejecutar
-- `boot` Elementales para booter el sistema
-- `cdrom` CD montados - Legacy
-- `dev` Dispositovos
-- `etc` Etcetera - Configuraciones globales del sistema
-- `lib, lib32 lib64` Librerias - Para que las aplicaciones usen
-- `media` mnt Donde se montan los dispositivos. media automatico y mnt manual
-- `opt` Carpeta Opcional - Se instalan otras apps
-- `proc` Procesos - Dond se almacenan la info de los procesos
-- `root` Home folder del usuario root
-- `run` Directorio temporario
-- `snap` Directorio de apps snaps
-- `srv` Server - Donde los achivos del server se guardan
-- `sys` Sistema - Directorio temporario del sistema
-- `tmp` Temporario - Donde se almacena session temporaria
-- `usr` Donde las aplicaciones para el usuario se instalan
-- `var` Variable - Archivos que varian de tamano
+## Shellcheck
+- [https://www.shellcheck.net/](https://www.shellcheck.net/)
+- `sudo apt install shellcheck`
+- `shellcheck file.sh`

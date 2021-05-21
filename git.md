@@ -47,7 +47,6 @@ git config --global color.ui auto
     - 
 - `git cherry-pick` Traer un commit 
     
-
 ### Branching
 - `git branch` Listar las branchs locales
 - `git branch -a` Listar todas las branchs incluso las remotas
@@ -64,6 +63,7 @@ git config --global color.ui auto
 - `git push -f [ALIAS:origin] [BRANCH:master]` Forzar actulizar los cambios
 - `git push -u [ALIAS:origin] [BRANCH]` Sube un branch al repositorio remoto
 - `git fetch [BOOKMARK]` Descarga toda la historia desde el repositorio
+- `git fetch --prune` Borra las ramas locales que ya fueron eliminadas
 - `git remote add [NAME:origin] [URL]` Asociar con repositorio remoto
 - `git remote remove [NAME:origin]` Eliminar la sincronizacion con el repositorio remoto
 

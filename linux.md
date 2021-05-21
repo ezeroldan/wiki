@@ -5,7 +5,6 @@
 sudo apt update -y && sudo apt upgrade -y
 
 sudo apt install -y software-properties-common
-sudo apt install -y vim
 sudo apt install -y curl
 sudo apt install -y wget
 sudo apt install -y htop
@@ -13,6 +12,9 @@ sudo apt install -y tree
 sudo apt install -y zip unzip
 sudo apt install -y mlocate
 sudo apt install -y neofetch
+
+sudo apt install -y vim
+sudo update-alternatives --config editor
 
 sudo apt install -y vlc
 sudo apt install -y filezilla
@@ -62,6 +64,21 @@ sudo apt install –reinstall ttf-mscorefonts-installer
 
 ## Drivers
 [Asus Q325UA](https://www.asus.com/supportonly/Q325UA/HelpDesk_Download/) 
+
+## Package Manager
+### Debian
+- `sudo apt install` Instalar paquete
+- `sudo apt remove` Remover paquete
+- `sudo apt update` Refrescar index del repositorio
+- `sudo apt upgrade` Actualizar todos los paquetes actualizables
+- `sudo apt purge` Remover paquete con configuracion
+- `sudo apt autoremove` Remover paquetes innecesarios
+- `sudo apt search` Buscar un programa
+- `sudo apt show` Mostrar info de un paquete
+- `sudo apt list` Listar paquetes con criterio (installed, upgradable etc)
+- `sudo apt edit-sources` Editar sources list
+- `sudo apt full-upgrade` Upgrades packages with auto-handling of dependencies
+- `sudo add-apt-repository --remove ppa:PPA_Name/ppa` Remove a PPA
 
 # Gnome
 
