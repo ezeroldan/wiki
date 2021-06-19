@@ -140,3 +140,70 @@ SHOW GRANTS FOR 'database_user'@'localhost';
 ```sql
 FLUSH PRIVILEGES;
 ```
+
+
+
+## bins
+
+### mariadb
+- `mariadb` MariaDB Database System
+- `mariadb-accessv`
+- `mariadb-admin`
+- `mariadb-analyze` -> `mariadb-check`
+- `mariadb-binlog`
+- `mariadb-check`
+- `mariadbcheck` -> `mariadb-check`
+- `mariadb-conv`
+- `mariadb-convert-table-format`
+- `mariadbd-multi`
+- `mariadbd-safe`
+- `mariadbd-safe-helper`
+- `mariadb-dump`
+- `mariadb-dumpslow`
+- `mariadb-find-rows`
+- `mariadb-fix-extensions`
+- `mariadb-hotcopy`
+- `mariadb-import`
+- `mariadb-install-db`
+- `mariadb-optimize` -> `mariadb-check`
+- `mariadb-plugin`
+- `mariadb-repair` -> `mariadb-check`
+- `mariadb-report`
+- `mariadb-secure-installation`
+- `mariadb-service-convert`
+- `mariadb-setpermission`
+- `mariadb-show`
+- `mariadb-slap`
+- `mariadb-tzinfo-to-sql`
+- `mariadb-upgrade`
+- `mariadb-waitpid`
+
+### MySQL
+- `mysql` -> `mariadb`
+- `mysqlaccess` -> `mariadb-access`
+- `mysqladmin` -> `mariadb-admin`
+- `mysqlanalyze` -> `mariadb-check`
+- `mysqlbinlog` -> `mariadb-binlog`
+- `mysqlcheck` -> `mariadb-check`
+- `mysql_convert_table_format` -> `mariadb-convert-table-format`
+- `mysqld_multi` -> `mariadbd-multi`
+- `mysqld_safe` -> `mariadbd-safe`
+- `mysqld_safe_helper` -> `mariadbd-safe-helper`
+- `mysqldump` -> `mariadb-dump`
+- `mysqldumpslow` -> `mariadb-dumpslow`
+- `mysql_find_rows` -> `mariadb-find-rows`
+- `mysql_fix_extensions` -> `mariadb-fix-extensions`
+- `mysqlhotcopy` -> `mariadb-hotcopy`
+- `mysqlimport` -> `mariadb-import`
+- `mysql_install_db` -> `mariadb-install-db`
+- `mysqloptimize` -> `mariadb-check`
+- `mysql_plugin` -> `mariadb-plugin`
+- `mysqlrepair` -> `mariadb-check`
+- `mysqlreport` -> `mariadb-report`
+- `mysql_secure_installation` -> `mariadb-secure-installation`
+- `mysql_setpermission` -> `mariadb-setpermission`
+- `mysqlshow` -> `mariadb-show`
+- `mysqlslap` -> `mariadb-slap`
+- `mysql_tzinfo_to_sql` -> `mariadb-tzinfo-to-sql`
+- `mysql_upgrade` -> `mariadb-upgrade`
+- `mysql_waitpid` -> `mariadb-waitpid`

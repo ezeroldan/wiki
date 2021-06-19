@@ -100,10 +100,10 @@ exit 0
 - `>/dev/null` Redirecciona el output a la nada
 
 ## Buscar comandos
-- `wich cat` Buscar ubicacion de un comando
-- `man -k calendar` Buscar un comando segun keyword
-- `type` Get information on a command
-- `whereis` Find the executable location, source, and manual
+- `type` Obtener info de un command
+- `whereis` Mostrar ubicacion, source y manual
+- `which command` Buscar ubicacion de un comando
+- `man -k command` Buscar un comando segun keyword
 
 ## Requesting Input
 
@@ -150,7 +150,6 @@ while getopts "a:b:" opt; do
     \?) ;;
 done
 ```
-
 
 ## Test command
 - `test -options arguments` Evalue el exit status `$?`
@@ -207,6 +206,19 @@ done
 - `[ f1 -nt f2 ]` f1 is newer than f2
 - `[ f1 -ot f2 ]` f1 is older than f2
 
+## Functions
+- `functions` Lista las funciones
+- `unfunction name` Elimina una funcion
+- `autoload -U name` Cargar una funcion
+
+```bash
+name() {
+  echo $1 # Positional Parameters
+}
+
+name "Param1"
+```
+
 ## Compound commands
 
 ### if
@@ -219,6 +231,7 @@ elif commad2 ; then # $? = 0
 else # $? = 1
 fi
 ```
+
 ### Array
 - `numbers=(1 2 3 4)` Indexed array
 - `${numbers[2]}` Muestra 3
@@ -229,10 +242,10 @@ fi
 - `${!numbers[@]}` Obtener los keys
 - `${numbers[@]@Q}` Mostrar con catacteres ocultos
 - `numbers[0]=1` Cambiar data por key
-- `readaray -t nombre < file.txt` Genera array por cada linea
-- `readaray -t nombre < <(ls ~)` Generar con process sustitution
+- `readarray -t nombre < file.txt` Genera array por cada linea
+- `readarray -t nombre < <(ls ~)` Generar con process sustitution
 
-### for loops
+### for
 ```bash
 itmes=(1 2 3 4)
 for item in "${itmes[@]}"; do
@@ -293,7 +306,6 @@ done
 - `tmp` Temporario - Donde se almacena session temporaria
 - `usr` Donde las aplicaciones para el usuario se instalan
 - `var` Variable - Archivos que varian de tamano
-
 
 ### Symbolic Links
 - `ln -s ABS_PATH NAME` Generar el link simbolico
@@ -446,9 +458,9 @@ done
   - `h` Human sizes
 
 ## Alias
+- `alias` Listar todas los alias
 - `alias name=''` Generar un Alias en el archivo de config
 - `unlias name` Eliminar un Alias
-- `alias` Listar todas los alias
 - `echo "alias name='value'" >> ~/.zshrc` Agregar Alias al archivo de configuracion
 
 ## Scheduling Repeated Jobs with Cron

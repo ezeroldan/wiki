@@ -81,6 +81,10 @@ composer require --dev phpunit/phpunit
 
 # Ejecutar un solo test
 ./vendor/bin/phpunit --filter nombreDelTest
+
+# Completo
+./vendor/bin/phpunit --testdox --colors=always --cache-result-file=.phpunit.result.cache
+
 ```
 
 ### Desde Composer
@@ -140,7 +144,7 @@ class EjemploTest extends TestCase
 }
 ```
 
-### 
+### Mocks
 ```php
 
 /** @var PHPUnit_Framework_MockObject_MockObject */
@@ -153,6 +157,7 @@ public function setUp(){
 public function testEjemplo(): void
 {
     $this->mock
+        ->expects($this->once())
         ->method('funtionName')
         ->with() 
         ->willReturn();
