@@ -3,6 +3,7 @@
 ## Unix
 - [Linux](./linux.md)
 - [Bash](./bash.md)
+- [Mac](./mac.md)
 
 ## Tools
 - [Git](./git.md)
