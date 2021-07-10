@@ -128,13 +128,25 @@ exit 0
 ### Select command
 ```bash
 PS3="Pregunta"
-select var in options; do
-  echo $var
-  break
+options=("option1" "option2" "Quit")
+select opt in "${options[@]}"; do
+  case $opt in
+    "option1")
+      echo "option1"
+      break;;
+    "option2")
+      echo "option2"
+      break;;
+    "Quit")
+      exit 1
+      break;;
+    *) 
+      echo "Invalid option $REPLY";;
+  esac
 done
 ```
 - Por defecto `RESPONSE` sera la variable con la respuesta
-- `break` Rompe el loop de select
+- `break;;` Rompe el loop de select
 - `PS3` Tiene el mensaje de la pregunta
 
 ### getopts (--option -o)
@@ -150,61 +162,6 @@ while getopts "a:b:" opt; do
     \?) ;;
 done
 ```
-
-## Test command
-- `test -options arguments` Evalue el exit status `$?`
-- `[ value -option arguments ]` Se puede usar con []
-- `exit 0` = true
-- `exit 1` = false
-
-### Internal Shell Conditions
-- `[ -o opt ]` Option opt for set -o is on.
-- `[ -R var ]` Variable var has been assigned a value and is a nameref.
-- `[ -v var ]` Variable var has been assigned a value. var may name an array element.
-
-### Integer Comparisons
-- `[ n1 -eq n2 ]` n1 == n2 (Equal)
-- `[ n1 -ne n2 ]` n1 != n2 (Not Equal)
-- `[ n1 -gt n2 ]` n1 >  n2 (Greater)
-- `[ n1 -ge n2 ]` n1 >= n2 (Greater or Equal)
-- `[ n1 -lt n2 ]` n1 <  n2 (Less)
-- `[ n1 -le n2 ]` n1 <= n2 (Less or Equal)
-
-### String Conditions
-- `[ s1 ]`         s1 is not null
-- `[ -n s1 ]`      s1 has nonzero length
-- `[ -z s1 ]`      s1 has zero length
-- `[ s1 = s2 ]`    s1 identical s2
-- `[ s1 == s2 ]`   s1 identical s2
-- `[ s1 != s2 ]`   s1 not identical s2
-- `[ s1 < s2 ]`    s1 precedes that of s2
-- `[ s1 > s2 ]`    s1 follows that of s2
-- `[[ s1 =~ s2 ]]` s1 matches regex s2
-
-### File Conditions
-- `[ -e f1 ]`     Exists
-- `[ -a f1 ]`     Exists (Deprecated use -e)
-- `[ -b f1 ]`     Exists and is a block special file
-- `[ -c f1 ]`     Exists and is a character special file
-- `[ -d f1 ]`     Exists and is a directory
-- `[ -f f1 ]`     Exists and is a regular file
-- `[ -g f1 ]`     Exists and its set-group-id bit is set
-- `[ -G f1 ]`     Exists and its group is the effective group ID
-- `[ -k f1 ]`     Exists and its sticky bit is set
-- `[ -h f1 ]`     Exists and is a symbolic link. (Same as -L)
-- `[ -L f1 ]`     Exists and is a symbolic link. (Same as -h)
-- `[ -N f1 ]`     Exists and was modified after it was last read
-- `[ -O f1 ]`     Exists and its owner is the effective user ID
-- `[ -p f1 ]`     Exists and is a named pipe (FIFO)
-- `[ -r f1 ]`     Exists and is readable
-- `[ -s f1 ]`     Exists and has a size greater than zero
-- `[ -S f1 ]`     Exists and is a socket
-- `[ -u f1 ]`     Exists and its set-user-id bit is set
-- `[ -w f1 ]`     Exists and is writable
-- `[ -x f1 ]`     Exists and is executable
-- `[ f1 -ef f2 ]` f1 and f2 are linked (same file)
-- `[ f1 -nt f2 ]` f1 is newer than f2
-- `[ f1 -ot f2 ]` f1 is older than f2
 
 ## Functions
 - `functions` Lista las funciones
@@ -231,6 +188,61 @@ elif commad2 ; then # $? = 0
 else # $? = 1
 fi
 ```
+
+### Test command
+- `test -options arguments` Evalue el exit status `$?`
+- `[ value -option arguments ]` Se puede usar con []
+- `exit 0` = true
+- `exit 1` = false
+
+#### Internal Shell Conditions
+- `[ -o opt ]` Option opt for set -o is on.
+- `[ -R var ]` Variable var has been assigned a value and is a nameref.
+- `[ -v var ]` Variable var has been assigned a value. var may name an array element.
+
+#### Integer Comparisons
+- `[ n1 -eq n2 ]` n1 == n2 (Equal)
+- `[ n1 -ne n2 ]` n1 != n2 (Not Equal)
+- `[ n1 -gt n2 ]` n1 >  n2 (Greater)
+- `[ n1 -ge n2 ]` n1 >= n2 (Greater or Equal)
+- `[ n1 -lt n2 ]` n1 <  n2 (Less)
+- `[ n1 -le n2 ]` n1 <= n2 (Less or Equal)
+
+#### String Conditions
+- `[ s1 ]`         s1 is not null
+- `[ -n s1 ]`      s1 has nonzero length
+- `[ -z s1 ]`      s1 has zero length
+- `[ s1 = s2 ]`    s1 identical s2
+- `[ s1 == s2 ]`   s1 identical s2
+- `[ s1 != s2 ]`   s1 not identical s2
+- `[ s1 < s2 ]`    s1 precedes that of s2
+- `[ s1 > s2 ]`    s1 follows that of s2
+- `[[ s1 =~ s2 ]]` s1 matches regex s2
+
+#### File Conditions
+- `[ -e f1 ]`     Exists
+- `[ -a f1 ]`     Exists (Deprecated use -e)
+- `[ -b f1 ]`     Exists and is a block special file
+- `[ -c f1 ]`     Exists and is a character special file
+- `[ -d f1 ]`     Exists and is a directory
+- `[ -f f1 ]`     Exists and is a regular file
+- `[ -g f1 ]`     Exists and its set-group-id bit is set
+- `[ -G f1 ]`     Exists and its group is the effective group ID
+- `[ -k f1 ]`     Exists and its sticky bit is set
+- `[ -h f1 ]`     Exists and is a symbolic link. (Same as -L)
+- `[ -L f1 ]`     Exists and is a symbolic link. (Same as -h)
+- `[ -N f1 ]`     Exists and was modified after it was last read
+- `[ -O f1 ]`     Exists and its owner is the effective user ID
+- `[ -p f1 ]`     Exists and is a named pipe (FIFO)
+- `[ -r f1 ]`     Exists and is readable
+- `[ -s f1 ]`     Exists and has a size greater than zero
+- `[ -S f1 ]`     Exists and is a socket
+- `[ -u f1 ]`     Exists and its set-user-id bit is set
+- `[ -w f1 ]`     Exists and is writable
+- `[ -x f1 ]`     Exists and is executable
+- `[ f1 -ef f2 ]` f1 and f2 are linked (same file)
+- `[ f1 -nt f2 ]` f1 is newer than f2
+- `[ f1 -ot f2 ]` f1 is older than f2
 
 ### Array
 - `numbers=(1 2 3 4)` Indexed array
